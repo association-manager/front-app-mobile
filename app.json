@@ -2,8 +2,28 @@
   "name": "frontAppMobile",
   "displayName": "association manager",
   "expo": {
+    "githubUrl": "https://github.com/association-manager/frontAppMobile",
+    "ios": {
+      "bundleIdentifier": "com.associationManager.frontAppMobile",
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.associationManager.frontAppMobile",
+      "versionCode": 1
+    },
     "platforms": [
+      "ios",
+      "android",
       "web"
     ]
-  }
+  },
+  "splash": {
+    "image": "src/assets/images/image-splash.png",
+    "resizeMode": "contain"
+  },
+  "assetBundlePatterns": [
+    "src/assets/images/*",
+    "src/assets/fonts",
+    "src/layouts/**/assets/*"
+  ]
 }

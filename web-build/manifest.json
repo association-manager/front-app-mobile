@@ -6,7 +6,17 @@
   "name": "front-app-mobile",
   "orientation": "any",
   "prefer_related_applications": true,
-  "related_applications": [],
+  "related_applications": [
+    {
+      "platform": "itunes",
+      "id": "com.associationManager.frontAppMobile"
+    },
+    {
+      "platform": "play",
+      "url": "http://play.google.com/store/apps/details?id=com.associationManager.frontAppMobile",
+      "id": "com.associationManager.frontAppMobile"
+    }
+  ],
   "short_name": "front-app-mobile",
   "start_url": ".",
   "icons": [

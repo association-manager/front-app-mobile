@@ -1,0 +1,21 @@
+{
+  "app.js": "/static/js/app.60914c0f.chunk.js",
+  "app.a5cd2f32ea4b2b2135b6.map": "/a5cd2f32ea4b2b2135b6.map",
+  "runtime~app.js": "/static/js/runtime~app.3005e7fe.js",
+  "runtime~app.cd1ec7b9271ad77685d6.map": "/cd1ec7b9271ad77685d6.map",
+  "static/js/2.83d77ecf.chunk.js": "/static/js/2.83d77ecf.chunk.js",
+  "c701354bbdd2647f703d.map": "/c701354bbdd2647f703d.map",
+  "apple/icons/icon_192x192.png": "/apple/icons/icon_192x192.png",
+  "apple/icons/icon_512x512.png": "/apple/icons/icon_512x512.png",
+  "expo-service-worker.js": "/expo-service-worker.js",
+  "expo-service-worker.js.gz": "/expo-service-worker.js.gz",
+  "favicon.ico": "/favicon.ico",
+  "index.html": "/index.html",
+  "manifest.json": "/manifest.json",
+  "precache-manifest.922573d2ff2babd79311dfcda449c294.js": "/precache-manifest.922573d2ff2babd79311dfcda449c294.js",
+  "serve.json": "/serve.json",
+  "service-worker.js": "/service-worker.js",
+  "static/js/2.83d77ecf.chunk.js.gz": "/static/js/2.83d77ecf.chunk.js.gz",
+  "static/js/app.60914c0f.chunk.js.gz": "/static/js/app.60914c0f.chunk.js.gz",
+  "static/js/runtime~app.3005e7fe.js.gz": "/static/js/runtime~app.3005e7fe.js.gz"
+}

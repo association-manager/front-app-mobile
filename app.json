@@ -1,4 +1,9 @@
 {
   "name": "frontAppMobile",
-  "displayName": "frontAppMobile"
+  "displayName": "association manager",
+  "expo": {
+    "platforms": [
+      "web"
+    ]
+  }
 }

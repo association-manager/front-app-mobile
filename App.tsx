@@ -9,46 +9,63 @@
  *
  * @format
  */
+
 import React from 'react';
-//import { AppearanceProvider } from 'react-native-appearance';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import {
+  ImageProps,
+  StyleSheet,
+} from 'react-native';
+import {
+  ApplicationProvider,
+  Button,
+  Icon,
+  IconRegistry,
+  Layout,
+  Text,
+} from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
-/* import { AppLoading} from './src/components/app-loading.component';
-import { SplashImage } from './src/components/splash-image.component'; */
-import { AppNavigator } from './src/components/navigation.component';
-import { mapping, dark as darkTheme, light as lightTheme } from '@eva-design/eva';
-import {AppIconsPack} from './src/components/app-icons-pack';
+import * as eva from '@eva-design/eva';
 
-import { default as appTheme } from './app-mobile-custom-theme.json'; // <-- Import app theme
-
-
-const theme = { ...darkTheme, ...appTheme };
-
-const App = (): React.ReactElement => (
-    <React.Fragment>
-      <IconRegistry icons={[EvaIconsPack, AppIconsPack]}/>
-        <ApplicationProvider mapping={mapping}  theme={theme}>
-          <SafeAreaProvider>
-            <AppNavigator/>
-          </SafeAreaProvider>
-        </ApplicationProvider>
-    </React.Fragment>
+/**
+ * Use any valid `name` property from eva icons (e.g `github`, or `heart-outline`)
+ * https://akveo.github.io/eva-icons
+ */
+const HeartIcon = (props: ImageProps): React.ReactElement<ImageProps> => (
+  <Icon {...props} name='heart'/>
 );
 
-export default App;
-
-/* const Splash = ({ loading }): React.ReactElement => (
-  <SplashImage
-    loading={loading}
-    source={require('src/assets/images/image-splash.png')}
-  />
+export default (): React.ReactFragment => (
+  <>
+    <IconRegistry icons={EvaIconsPack}/>
+    <ApplicationProvider {...eva} theme={eva.light}>
+      <Layout style={styles.container}>
+        <Text style={styles.text} category='h1'>
+          Welcome to UI Kitten 😻
+        </Text>
+        <Text style={styles.text} category='s1'>
+          Start with editing App.js to configure your App
+        </Text>
+        <Text style={styles.text} appearance='hint'>
+          For example, try changing theme to Dark by using eva.dark
+        </Text>
+        <Button style={styles.likeButton} icon={HeartIcon}>
+          LIKE
+        </Button>
+      </Layout>
+    </ApplicationProvider>
+  </>
 );
 
-export default (): React.ReactElement => (
-  <AppLoading
-    initialConfig={theme}
-    placeholder={Splash}>
-    {props => <App {...props}/>}
-  </AppLoading>
-); */
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    textAlign: 'center',
+  },
+  likeButton: {
+    marginVertical: 16,
+  },
+});

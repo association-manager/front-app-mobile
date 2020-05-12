@@ -1,14 +1,13 @@
 import React from 'react';
-import { createStackNavigator} from '@react-navigation/stack';
-import { HomeScreen } from '../screen/home.screen';
-import { DetailsScreen } from '../components/details.component';
+import { createStackNavigator } from '@react-navigation/stack';
+import { ProjectTasksNavigator } from './project-tasks.navigator';
+import { ProjectsScreen } from '../screen/projects.screen';
 
-
-const { Navigator, Screen } = createStackNavigator();
+const Stack = createStackNavigator();
 
 export const HomeNavigator = () => (
-  <Navigator headerMode='none'>
-    <Screen name='Home' component={HomeScreen}/>
-    <Screen name='Details' component={DetailsScreen}/>
-  </Navigator>
+  <Stack.Navigator initialRouteName="Home">
+    <Stack.Screen name='Projects' component={ProjectsScreen}/>
+    <Stack.Screen name='projectTasks' component={ProjectTasksNavigator}/>
+  </Stack.Navigator>
 );

@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 20315,
-  "expoServerNgrokUrl": "https://3g-fxu.gio1378.frontappmobile.exp.direct",
-  "packagerNgrokUrl": "https://packager.3g-fxu.gio1378.frontappmobile.exp.direct",
-  "ngrokPid": 20339,
+  "packagerPid": 24567,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }

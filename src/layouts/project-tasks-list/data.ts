@@ -1,26 +1,26 @@
-import { LayoutItem } from '../../models/layout-item.model';
+import { ProjectTaskItem } from '../../models/project-task-item.model';
 
-export interface AuthData extends LayoutItem {
+export interface ProjectTaskData extends ProjectTaskItem {
   route: string;
 }
 
-export const data: AuthData[] = [
+export const data: ProjectTaskData[] = [
   {
-    title: 'Article',
+    title: 'Task1',
     description: 'Option 1',
     image: require('../../assets/images/splash.png'),
-    route: 'Article1',
+    route: 'ProjectTaskDetailScreen',
   },
   {
-    title: 'Article',
+    title: 'Task2',
     description: 'Option 2',
     image: require('../../assets/images/splash.png'),
-    route: 'Article2',
+    route: 'ProjectTaskDetailScreen',
   },
   {
-    title: 'Article',
+    title: 'Task3',
     description: 'Option 3',
     image: require('../../assets/images/splash.png'),
-    route: 'Article3',
+    route: 'ProjectTaskDetailScreen',
   },
 ]

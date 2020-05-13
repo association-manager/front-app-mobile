@@ -1,10 +1,10 @@
 import React from 'react';
 import { Divider, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
-import { SafeAreaLayout } from '../components/safe-area-layout.component';
+//import { SafeAreaLayout } from '../components/safe-area-layout.component';
 import { MenuGridList } from '../components/menu-grid-list.component';
 import { MenuIcon } from '../components/icons';
-import { data } from '../layouts/projectData';
-import styles from '../styles/layoutStyle.style';
+import { data } from '../layouts/projects/projectData';
+import styles from '../assets/styles/layoutStyle.style';
 
 export const ProjectTasksScreen = (props: { navigation: any }): React.ReactElement => {
 
@@ -20,9 +20,9 @@ export const ProjectTasksScreen = (props: { navigation: any }): React.ReactEleme
   );
 
   return (
-    <SafeAreaLayout
-      style={styles.area}
-      insets='top'>
+    <>
+{/*       style={styles.area}
+      insets='top'> */}
       <TopNavigation
         title='Associaton Manager'
         leftControl={renderDrawerAction()}
@@ -32,6 +32,6 @@ export const ProjectTasksScreen = (props: { navigation: any }): React.ReactEleme
         data={data}
         onItemPress={onItemPress}
       />
-    </SafeAreaLayout>
+    </>
   );
 };

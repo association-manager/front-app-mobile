@@ -10,7 +10,7 @@ const data: ProjectTask[] = [
   ProjectTask.whyWorkoutImportant(),
 ];
 
-export default ({ navigation }): React.ReactElement => {
+export default ({ navigation }: any): React.ReactElement => {
 
   const onItemPress = (index: number): void => {
     navigation && navigation.navigate('ProjectTask1');

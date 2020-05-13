@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { ImageStyle } from 'react-native';
-import { AssetDashboardsDarkIcon, AssetDashboardsIcon } from '../components/icons';
-import { ProjectItem } from '../models/project-item.model';
+import { AssetDashboardsDarkIcon, AssetDashboardsIcon } from '../../components/icons';
+import { ProjectItem } from '../../models/project-item.model';
 import { IconElement, IconProps } from '@ui-kitten/components';
 
 export interface ThemedIconProps extends Omit<IconProps, 'name'> {
@@ -22,7 +22,7 @@ export interface ProjectData extends ProjectItem {
 
 export const data: ProjectData[] = [
   {
-    route: 'ProjectRoute',
+    route: 'projectTasks',
     title: 'ProjectTitle',
     icon: (style: ImageStyle) => React.createElement(ThemedIcon,{ ...style ,light: AssetDashboardsIcon, dark: AssetDashboardsDarkIcon }),
     description:'Project description',

@@ -10,22 +10,26 @@ const layoutItemnStyle = StyleSheet.create({
   },
   itemDescription: {
     marginTop: 4,
+    color:'darkgray',
+    backgroundColor: 'rgba(0, 0, 0, 0.14)',
   },
 item: {
     flex: 1,
-    justifyContent: 'center',
+    //justifyContent: 'center',
     aspectRatio: 1.0,
     margin: 8,
     maxWidth: Dimensions.get('window').width / 2 - 24,
   },
   itemImage: {
     alignSelf: 'center',
-    width: 64,
-    height: 64,
+    width: 30,
+    height: 30,
   },
   itemTitle: {
     alignSelf: 'center',
-    marginTop: 8,
+    marginTop: 0,
+  },
+  image: {
   },
 });
 

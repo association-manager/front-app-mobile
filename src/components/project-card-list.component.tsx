@@ -6,35 +6,36 @@ import { ProjectItem } from '../models/project-item.model';
 
 import styles from '../assets/styles/layoutItemStyle.style';
 
-export interface MenuGridListProps extends Omit<ListProps, 'renderItem'> {
+export interface ProjectCardListProps extends Omit<ListProps, 'renderItem'> {
   data: ProjectItem[];
   onItemPress: (index: number) => void;
 }
 
-export const MenuGridList = (props: MenuGridListProps): ListElement => {
+export const ProjectCardList = (props: ProjectCardListProps): ListElement => {
 
   const { contentContainerStyle, onItemPress, ...listProps } = props;
 
   const renderItem = (info: ListRenderItemInfo<ProjectItem>): ListItemElement => (
-    <Card
-      style={styles.item}
-      onPress={() => props.onItemPress(info.index)}>
-      {info.item.icon({ width: 64, height: 64, alignSelf: 'center' })}
-      <ImageOverlay
-        style={styles.image}
-        source={info.item.image}>
-      <Text
-        style={styles.itemTitle}
-        category='s2'>
-        {info.item.title}
-      </Text>
-      <Text
-        style={styles.itemDescription}
-        appearance='hint'>
-        {info.item.description}
-      </Text>
+      <Card
+        style={styles.item}
+        onPress={() => props.onItemPress(info.index)}>
+        {info.item.icon(styles.itemImage)}
+        <ImageOverlay
+          style={styles.image}
+          source={info.item.image}>
+        <Text
+          style={styles.itemTitle}
+          category='s1'>
+          {info.item.title}
+        </Text>
+        <Text
+          style={styles.itemDescription}
+          category='c2'>
+          {info.item.description}
+        </Text>
       </ImageOverlay>
     </Card>
+ 
   );
 
 

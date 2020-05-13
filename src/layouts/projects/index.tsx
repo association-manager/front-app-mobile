@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Avatar, Button, Divider, Layout, Text } from '@ui-kitten/components';
-import { ImageOverlay } from './extra/image-overlay.component';
+import { ImageOverlay } from '../../components/image-overlay.component';
 import { HeartIcon, MessageCircleIcon } from './extra/icons';
 import { Project } from './extra/data';
 

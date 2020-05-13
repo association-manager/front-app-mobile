@@ -1,7 +1,7 @@
 import React from 'react';
 import { ListRenderItemInfo, StyleSheet } from 'react-native';
 import { Card, CardElement, List, ListElement, ListProps, Text } from '@ui-kitten/components';
-import { TaskItem } from '../models/task-item.model';
+import { TaskItem } from '../models/project-task-item.model';
 
 export interface LayoutListProps extends Omit<ListProps, 'renderItem'> {
   data: TaskItem[];

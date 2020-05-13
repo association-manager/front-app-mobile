@@ -4,7 +4,7 @@ import { AppNavigator } from './navigation.component';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { AppIconsPack } from './app-icons-pack';
 import { mapping, dark as darkTheme } from '@eva-design/eva';
-import { default as appTheme } from '../styles/custom-theme.json'; // <-- Import app theme
+import { default as appTheme } from '../assets/styles/custom-theme.json'; // <-- Import app theme
 
 const theme = { ...darkTheme, ...appTheme };
 

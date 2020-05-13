@@ -1,9 +1,10 @@
 import React from 'react';
 import { ListRenderItemInfo, Image} from 'react-native';
 import { Card, List, ListElement, ListItemElement, ListProps, Text } from '@ui-kitten/components';
+import { ImageOverlay } from './image-overlay.component';
 import { ProjectItem } from '../models/project-item.model';
 
-import styles from '../styles/layoutItemStyle.style';
+import styles from '../assets/styles/layoutItemStyle.style';
 
 export interface MenuGridListProps extends Omit<ListProps, 'renderItem'> {
   data: ProjectItem[];
@@ -19,6 +20,9 @@ export const MenuGridList = (props: MenuGridListProps): ListElement => {
       style={styles.item}
       onPress={() => props.onItemPress(info.index)}>
       {info.item.icon({ width: 64, height: 64, alignSelf: 'center' })}
+      <ImageOverlay
+        style={styles.image}
+        source={info.item.image}>
       <Text
         style={styles.itemTitle}
         category='s2'>
@@ -29,10 +33,7 @@ export const MenuGridList = (props: MenuGridListProps): ListElement => {
         appearance='hint'>
         {info.item.description}
       </Text>
-      <Image
-        style={styles.itemImage}
-        source={info.item.image}
-      />
+      </ImageOverlay>
     </Card>
   );
 

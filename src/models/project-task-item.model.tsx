@@ -1,6 +1,6 @@
 import { ImageSourcePropType } from 'react-native';
 
-export interface TaskItem {
+export interface ProjectTaskItem {
   title: string;
   description: string;
   image: ImageSourcePropType;

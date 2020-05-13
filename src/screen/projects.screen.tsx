@@ -1,9 +1,9 @@
 import React from 'react';
 import { Divider, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
-import { MenuGridList } from '../components/menu-grid-list.component';
+import { ProjectCardList } from '../components/project-card-list.component';
 import { MenuIcon } from '../components/icons';
-import { data } from '../layouts/projectData';
-import styles from '../styles/layoutStyle.style';
+import { data } from '../layouts/projects/projectData';
+import styles from '../assets/styles/layoutStyle.style';
 
 export const ProjectsScreen = (props: { navigation: any }): React.ReactElement => {
 
@@ -27,7 +27,7 @@ export const ProjectsScreen = (props: { navigation: any }): React.ReactElement =
         leftControl={renderDrawerAction()}
       />
       <Divider/>
-      <MenuGridList
+      <ProjectCardList
         data={data}
         onItemPress={onItemPress}
       />

@@ -19,5 +19,6 @@ const navigatorTheme = {
 export const AppNavigator = () => (
   <NavigationContainer theme={navigatorTheme}>
     <HomeNavigator/>
+    {/* <AuthNavigator/> */}
   </NavigationContainer>
 );

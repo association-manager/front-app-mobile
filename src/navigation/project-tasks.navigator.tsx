@@ -1,25 +1,26 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { GridListComponent } from '../components/grid-list-component';
-import { ProjectTasksGridScreen } from '../components/project-tasks-grid.component';
-import { ProjectTasksListScreen } from '../components/project-tasks-list.component';
-import { ProjectTaskDetailScreen } from '../screen/project-task-detail.screen';
+import { ProjectTasksTabBar } from '../components/project-tasks-tab-bar.component';
+import { ProjectTasksGridScreen } from '../screens/project-tasks-grid.screen';
+import { ProjectTaskDetailScreen } from '../screens/project-task-detail.screen';
+
 
 const TopTab = createMaterialTopTabNavigator();
 const Stack = createStackNavigator();
 
-const ProjectsMenuNavigator = (): React.ReactElement => (
-  <TopTab.Navigator tabBar={(props) => <GridListComponent {...props}/>}>
-    <TopTab.Screen name='ProjectsGrid' component={ProjectTasksGridScreen}/>
-    <TopTab.Screen name='ProjectsList' component={ProjectTasksListScreen}/>
-  </TopTab.Navigator>
+
+const ProjectTasksMenuNavigator = (): React.ReactElement => (
+<TopTab.Navigator tabBar={(props) => <ProjectTasksTabBar {...props} />}>
+  <TopTab.Screen name='À faire' component={ProjectTasksGridScreen}/>
+  <TopTab.Screen name='En cours' component={ProjectTasksGridScreen}/>
+  <TopTab.Screen name='Termineé' component={ProjectTasksGridScreen}/>
+</TopTab.Navigator>
 );
 
 export const ProjectTasksNavigator = (): React.ReactElement => (
   <Stack.Navigator headerMode='none'>
-    <Stack.Screen name='ProjectsTask' component={ProjectsMenuNavigator}/>
+    <Stack.Screen name='ProjectsTaskMenu' component={ProjectTasksMenuNavigator}/>
     <Stack.Screen name='ProjectTaskDetailScreen' component={ProjectTaskDetailScreen}/>
-
   </Stack.Navigator>
 );

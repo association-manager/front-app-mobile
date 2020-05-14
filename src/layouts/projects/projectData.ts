@@ -23,9 +23,9 @@ export interface ProjectData extends ProjectItem {
 export const data: ProjectData[] = [
   {
     route: 'projectTasks',
-    title: 'ProjectTitle',
+    title: 'Titre du projet',
     icon: (style: ImageStyle) => React.createElement(ThemedIcon,{ ...style ,light: AssetDashboardsIcon, dark: AssetDashboardsDarkIcon }),
-    description:'Project description',
+    description:'Project description \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida id velit tempor efficitur. Nunc molestie scelerisque porttitor.',
     image: {uri: 'https://cdn.pixabay.com/photo/2015/03/15/08/46/head-674129__480.jpg'}
   },
 ];

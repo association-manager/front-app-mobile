@@ -1,10 +1,10 @@
 import React from 'react';
 import { ListRenderItemInfo, Image} from 'react-native';
 import { Card, List, ListElement, ListItemElement, ListProps, Text } from '@ui-kitten/components';
-import { ImageOverlay } from './image-overlay.component';
-import { ProjectItem } from '../../../models/project-item.model';
+import { ImageOverlay } from '../layouts/projects/extra/image-overlay.component';
+import { ProjectItem } from '../models/project-item.model';
 
-import styles from '../../../assets/styles/layoutItemStyle.style';
+import styles from '../assets/styles/layoutItemStyle.style';
 
 export interface ProjectCardListProps extends Omit<ListProps, 'renderItem'> {
   data: ProjectItem[];

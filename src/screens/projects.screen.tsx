@@ -1,8 +1,8 @@
 import React from 'react';
 import { Divider, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
-import { ProjectCardList } from '../layouts/projects/extra/project-card-list.component';
+import { ProjectCardList } from '../components/project-card-list.component';
 import { ArrowIosBackIcon } from '../components/icons';
-import { data } from '../layouts/projects/projectData';
+import { data } from '../services/projectData';
 
 import styles from '../assets/styles/layoutStyle.style';
 

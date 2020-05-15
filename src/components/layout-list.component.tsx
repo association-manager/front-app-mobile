@@ -1,10 +1,10 @@
 import React from 'react';
 import { ListRenderItemInfo, StyleSheet } from 'react-native';
 import { Card, CardElement, List, ListElement, ListProps, Text } from '@ui-kitten/components';
-import { TaskItem } from '../models/project-task-item.model';
+import { ProjectTaskItem } from '../models/project-task-item.model';
 
 export interface LayoutListProps extends Omit<ListProps, 'renderItem'> {
-  data: TaskItem[];
+  data: ProjectTaskItem[];
   onItemPress: (index: number) => void;
 }
 
@@ -14,7 +14,7 @@ export const LayoutList = (props: LayoutListProps): ListElement => {
 
   const { contentContainerStyle, onItemPress, ...listProps } = props;
 
-  const renderItem = (info: ListRenderItemInfo<TaskItem>): CardElement => (
+  const renderItem = (info: ListRenderItemInfo<ProjectTaskItem>): CardElement => (
     <Card
       style={styles.itemContainer}
       onPress={() => onItemPress(info.index)}>

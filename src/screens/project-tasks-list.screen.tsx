@@ -1,6 +1,6 @@
 import React from 'react';
 import { LayoutList } from '../components/layout-list.component';
-import { data } from '../layouts/project-tasks-list/data';
+import { data } from '../services/ProjectTaskData';
 
 export const ProjectTasksListScreen = ({ navigation }: any): React.ReactElement => {
 

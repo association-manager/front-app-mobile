@@ -7,7 +7,7 @@ import styles from '../assets/styles/layoutStyle.style';
 export const HomeScreen = ({navigation}: any ): React.ReactElement => {
 
   const onItemPress = (): void => {
-    navigation.navigate('Projects');
+    navigation.navigate('ProjectsNavigator');
   };
 
   const renderDrawerAction = (): React.ReactElement => (

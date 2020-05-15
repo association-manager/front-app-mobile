@@ -19,6 +19,9 @@ item: {
     aspectRatio: 1.0,
     margin: 8,
     maxWidth: Dimensions.get('window').width / 2 - 24,
+    borderBottomColor: 'black',
+    borderRightColor: 'black'
+    
   },
   itemImage: {
     alignSelf: 'center',

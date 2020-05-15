@@ -12,7 +12,7 @@ import {
 } from './extra/icons';
 import { KeyboardAvoidingView } from './extra/3rd-party';
 
-export default ({ navigation }): React.ReactElement => {
+export default ({ navigation }: any): React.ReactElement => {
 
   const [email, setEmail] = React.useState<string>();
   const [password, setPassword] = React.useState<string>();

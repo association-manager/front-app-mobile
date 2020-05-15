@@ -22,7 +22,7 @@ export interface ProjectData extends ProjectItem {
 
 export const data: ProjectData[] = [
   {
-    route: 'projectTasks',
+    route: 'ProjectTasksNavigator',
     title: 'Titre du projet',
     icon: (style: ImageStyle) => React.createElement(ThemedIcon,{ ...style ,light: AssetDashboardsIcon, dark: AssetDashboardsDarkIcon }),
     description:'Project description \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida id velit tempor efficitur. Nunc molestie scelerisque porttitor.',

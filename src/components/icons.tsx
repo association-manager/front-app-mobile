@@ -22,6 +22,10 @@ export const BookmarkOutlineIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} name='bookmark-outline'/>
 );
 
+export const ClockIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='clock'/>
+);
+
 export const ColorPaletteIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} name='color-palette-outline'/>
 );

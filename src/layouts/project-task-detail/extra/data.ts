@@ -1,4 +1,5 @@
 import { ImageSourcePropType } from 'react-native';
+import { ProjectTaskListItem } from '../../../models/project-task-list-item.models';
 
 export class ProjectTaskDetail {
 
@@ -7,6 +8,7 @@ export class ProjectTaskDetail {
               readonly content: string,
               readonly image: ImageSourcePropType,
               readonly date: string,
+              public   progress: ProjectTaskListItem [],
               readonly author: Profile,
               readonly likes: Like[],
               readonly comments: Comment[]) {
@@ -19,6 +21,11 @@ export class ProjectTaskDetail {
       'There\'s a lot of advice out there on how to eat healthy, and if we\'re being honest, it can sometimes feel like too much to think about. Especially when you\'re hungry. Remember when you were a kid and eating was as simple as open, chew, enjoy? Yes, those were simpler times. Now, knowing how to eat healthy doesn\'t seem quite as straightforward. Between the diet fads, gourmet trends, and a rotating roster of superfoods, eating well has gotten, well, complicated.',
       require('../assets/image-background.jpg'),
       '19 Sep, 2018',
+      [
+        ProjectTaskListItem.TO_DO(),
+        ProjectTaskListItem.IN_PROGRESS(),
+        ProjectTaskListItem.COMPLETED(),
+      ],
       Profile.markVolter(),
       [
         Like.byMarkVolter(),

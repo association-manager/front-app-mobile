@@ -3,7 +3,8 @@ import {Tab, TabBar} from '@ui-kitten/components';
 import { ArrowIosBackIcon } from '../components/icons';
 import { TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 
-import styles from '../assets/styles/layoutItemStyle.style';
+//import styles from '../assets/styles/layoutItemStyle.style';
+
 export const ProjectTasksTabBar = ({ navigation, state } :any): React.ReactElement => {
 
   const renderBackAction = (): React.ReactElement => (
@@ -31,7 +32,7 @@ export const ProjectTasksTabBar = ({ navigation, state } :any): React.ReactEleme
       leftControl={renderBackAction()}
       />
       <TabBar
-          style={styles.container}
+          //style={styles.container}
           selectedIndex={state.index}
           onSelect={onTabSelect}>
           {state.routeNames.map(renderTab)}

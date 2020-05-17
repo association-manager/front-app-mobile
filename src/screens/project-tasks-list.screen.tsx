@@ -1,6 +1,6 @@
 import React from 'react';
 import { LayoutList } from '../components/layout-list.component';
-import { data } from '../services/ProjectTaskData';
+import { data, ProjectTaskData } from '../services/ProjectTaskData';
 
 export const ProjectTasksListScreen = ({ navigation }: any): React.ReactElement => {
 
@@ -8,9 +8,11 @@ export const ProjectTasksListScreen = ({ navigation }: any): React.ReactElement 
     navigation.navigate(data[index].route);
   };
 
+  const displayProjectTaskData: ProjectTaskData[] = data.filter(data => data.progress.description === navigation.name);
+
   return (
     <LayoutList
-      data={data}
+      data={displayProjectTaskData}
       onItemPress={onItemPress}
     />
   );

@@ -1,9 +1,12 @@
 import React from 'react';
 import { ImageBackground, Platform, View } from 'react-native';
-import { Input, Layout, StyleService, Text, useStyleSheet } from '@ui-kitten/components';
-import { KeyboardAvoidingView } from './extra/keyboard-avoiding-view.component';
-import { CommentList } from './extra/comment-list.component';
+import { Input, Layout, Text, useStyleSheet, RadioGroup, Radio } from '@ui-kitten/components';
+import { KeyboardAvoidingView } from '../../components/keyboard-avoiding-view.component';
+import { CommentList } from '../../components/comment-list.component';
 import { ProjectTaskDetail } from './extra/data';
+import { ProjectTaskListItem} from '../../models/project-task-list-item.models';
+
+import { themedStyles } from './assets/styles';
 
 const data: ProjectTaskDetail = ProjectTaskDetail.howToEatHealthy();
 
@@ -16,6 +19,16 @@ export default (): React.ReactElement => {
 
   const styles = useStyleSheet(themedStyles);
   const [inputComment, setInputComment] = React.useState<string>();
+  const [selectedProgressIndex, setSelectedProgressIndex] = React.useState<number>();
+  
+  const renderProgressItem = (progress: ProjectTaskListItem, index: number): React.ReactElement => (
+    <Radio
+      key={index}
+      style={styles.colorRadio}
+      // textStyle={{ color: color.value }}
+      text={progress.description.toUpperCase()}
+    />
+  );
 
   const renderHeader = (): React.ReactElement => (
     <Layout
@@ -38,6 +51,17 @@ export default (): React.ReactElement => {
       <Text style={styles.contentLabel}>
         {data.content}
       </Text>
+      <Text
+          style={styles.sectionLabel}
+          category='h6'>
+        Progress:
+      </Text>
+      <RadioGroup
+        style={styles.colorGroup}
+        selectedIndex={selectedProgressIndex}
+        onChange={setSelectedProgressIndex}>
+        {data.progress.map(renderProgressItem)}
+      </RadioGroup>
       <View style={styles.authoringContainer}>
         <Text
           appearance='hint'
@@ -74,47 +98,3 @@ export default (): React.ReactElement => {
     </KeyboardAvoidingView>
   );
 };
-
-const themedStyles = StyleService.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'background-basic-color-2',
-    paddingBottom: 8,
-  },
-  list: {
-    flex: 1,
-  },
-  header: {
-    marginBottom: 8,
-  },
-  image: {
-    height: 240,
-  },
-  titleLabel: {
-    marginHorizontal: 24,
-    marginVertical: 16,
-  },
-  descriptionLabel: {
-    margin: 24,
-  },
-  contentLabel: {
-    margin: 24,
-  },
-  authoringContainer: {
-    flexDirection: 'row',
-    marginHorizontal: 24,
-  },
-  dateLabel: {
-    marginHorizontal: 8,
-  },
-  commentInputLabel: {
-    fontSize: 16,
-    marginBottom: 8,
-    color: 'text-basic-color',
-  },
-  commentInput: {
-    marginHorizontal: 24,
-    marginTop: 24,
-    marginBottom: 20,
-  },
-});

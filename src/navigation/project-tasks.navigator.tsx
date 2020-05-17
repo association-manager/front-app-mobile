@@ -14,7 +14,7 @@ const ProjectTasksMenuNavigator = (): React.ReactElement => (
 <TopTab.Navigator tabBar={(props) => <ProjectTasksTabBar {...props} />}>
   <TopTab.Screen name='À faire' component={ProjectTasksGridScreen}/>
   <TopTab.Screen name='En cours' component={ProjectTasksGridScreen}/>
-  <TopTab.Screen name='Termineé' component={ProjectTasksGridScreen}/>
+  <TopTab.Screen name='Terminée' component={ProjectTasksGridScreen}/>
 </TopTab.Navigator>
 );
 

@@ -4,12 +4,13 @@ import {ProjectTaskListItem} from './project-task-list-item.models'
 export interface ProjectTaskItem {
   title: string;
   description: string;
-  duration: number;
+  startDate: number;
+  endDate: number;
   image?: ImageSourcePropType;
   progress : ProjectTaskListItem;
-  date: string,
-  author: Profile,
-  comments: Comment[]
+  createdAt: number;
+  author: Profile;
+  comments: Comment[];
 }
 export class Comment {
 

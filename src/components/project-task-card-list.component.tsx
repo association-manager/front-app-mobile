@@ -31,7 +31,7 @@ export const ProjectTaskCardList = (props: ProjectTaskCardListProps): ListElemen
           style={styles.image}
           source={info.item.image}>
           <Text
-            style={styles.level}
+            style={[styles.level, {color:info.item.progress.color}]}
             category='s1'
             status='control'>
             {info.item.progress.description}
@@ -57,7 +57,7 @@ export const ProjectTaskCardList = (props: ProjectTaskCardListProps): ListElemen
             style={styles.dateEndRight}
             size='tiny'
             icon={ClockIcon}>
-            {info.item.endDate}
+            {moment(info.item.endDate)}
           </Button>
         </ImageOverlay>
       </Card>

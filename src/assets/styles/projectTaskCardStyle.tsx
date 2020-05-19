@@ -18,6 +18,10 @@ export const styles = StyleSheet.create({
     },
     level: {
       zIndex: 1,
+      backgroundColor: 'rgba(0, 0, 0, 0.14)',
+      alignSelf:'flex-start',
+      paddingHorizontal: 4,
+
     },
     title: {
       zIndex: 1,

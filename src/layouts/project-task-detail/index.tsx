@@ -25,7 +25,7 @@ export default (): React.ReactElement => {
     <Radio
       key={index}
       style={styles.colorRadio}
-      // textStyle={{ color: color.value }}
+      textStyle={{ color: progress.color }}
       text={progress.description.toUpperCase()}
     />
   );

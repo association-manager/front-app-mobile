@@ -1,5 +1,6 @@
 import React from 'react';
 import { Divider, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ProjectCardList } from '../components/project-card-list.component';
 import { ArrowIosBackIcon } from '../components/icons';
 import { data } from '../services/projectData';

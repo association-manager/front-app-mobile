@@ -1,5 +1,6 @@
 import React from 'react';
 import {Tab, TabBar} from '@ui-kitten/components';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ArrowIosBackIcon } from '../components/icons';
 import { TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 
@@ -26,7 +27,7 @@ export const ProjectTasksTabBar = ({ navigation, state } :any): React.ReactEleme
   );
 
   return (
-    <>
+    <SafeAreaProvider>
       <TopNavigation
       title='Retour'
       leftControl={renderBackAction()}
@@ -37,6 +38,6 @@ export const ProjectTasksTabBar = ({ navigation, state } :any): React.ReactEleme
           onSelect={onTabSelect}>
           {state.routeNames.map(renderTab)}
       </TabBar>
-    </>
+    </SafeAreaProvider>
   );
 };

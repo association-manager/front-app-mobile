@@ -20,7 +20,7 @@ export const themedStyles = StyleService.create({
     marginVertical: 16,
   },
   sectionLabel: {
-    marginVertical: 8,
+    margin: 8,
   },
   descriptionLabel: {
     margin: 24,
@@ -46,6 +46,7 @@ export const themedStyles = StyleService.create({
     marginBottom: 20,
   },
   colorGroup: {
+    marginLeft: 8,
     flexDirection: 'row',
     marginHorizontal: -8,
   },

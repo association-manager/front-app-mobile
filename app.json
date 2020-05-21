@@ -1,33 +1,41 @@
 {
-  "name": "front-app-mobile",
-  "displayName": "association manager mobile",
   "expo": {
-    "name": "front-app-mobile",
-    "slug": "front-app-mobile",
+    "name": "Association Manager",
+    "slug": "association-manager",
+    "version": "0.0.1",
+    "sdkVersion": "36.0.0",
+    "description": "Application mobile for assocaiton manager with UI Kitten Template",
+    "githubUrl": "https://github.com/alihasana/amapp",
+    "ios": {
+      "bundleIdentifier": "oualpaif.corp",
+      "buildNumber": "3"
+    },
+    "android": {
+      "package": "oualpaif.corp",
+      "versionCode": 3
+    },
+    "privacy": "public",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "src/assets/images/icon.png",
+    "userInterfaceStyle": "automatic",
+    "icon": "./src/assets/images/image-app-icon.png",
     "splash": {
-      "image": "src/assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
+      "image": "src/assets/images/image-splash.png",
+      "resizeMode": "contain"
     },
     "assetBundlePatterns": [
       "src/assets/images/*",
       "src/assets/fonts",
-      "src/assets/styles",
       "src/layouts/**/assets/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    }
-  }  
+    "androidStatusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#F7F9FC"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
+  }
 }

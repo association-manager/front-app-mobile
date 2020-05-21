@@ -10,6 +10,18 @@ const IconProvider = (source: ImageRequireSource) => ({
   ),
 });
 
+const IconProviderLess = (source: ImageRequireSource) => ({
+  toReactElement: () => (
+    <Image style={{
+      "width": 20,
+      "height": 20,
+      "marginHorizontal": 8,
+      "tintColor": "#8F9BB3"
+    }} source={source}/>
+  ),
+});
+
+
 export const AppIconsPack = {
   name: 'app',
   icons: {
@@ -18,14 +30,14 @@ export const AppIconsPack = {
     'messaging': IconProvider(require('../assets/images/icon-messaging.png')),
     'messaging-dark': IconProvider(require('../assets/images/icon-messaging-dark.png')),
     'dashboards': IconProvider(require('../assets/images/icon-dashboards.png')),
+    'dashboard': IconProviderLess(require('../assets/images/icon-dashboards.png')),
     'dashboards-dark': IconProvider(require('../assets/images/icon-dashboards-dark.png')),
     'autocomplete': IconProvider(require('../assets/images/icon-autocomplete.png')),
     'autocomplete-dark': IconProvider(require('../assets/images/icon-autocomplete-dark.png')),
     'avatar': IconProvider(require('../assets/images/icon-avatar.png')),
     'avatar-dark': IconProvider(require('../assets/images/icon-avatar-dark.png')),
     'bottom-navigation': IconProvider(require('../assets/images/icon-bottom-navigation.png')),
-    'bottom-navigation-dark': IconProvider(require(
-      '../assets/images/icon-bottom-navigation-dark.png')),
+    'bottom-navigation-dark': IconProvider(require('../assets/images/icon-bottom-navigation-dark.png')),
     'button': IconProvider(require('../assets/images/icon-button.png')),
     'button-dark': IconProvider(require('../assets/images/icon-button-dark.png')),
     'button-group': IconProvider(require('../assets/images/icon-button-group.png')),

@@ -2,13 +2,12 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Avatar, Divider, Drawer, DrawerElement, DrawerHeaderElement, DrawerHeaderFooter} from '@ui-kitten/components';
 import { DrawerHeaderFooterElement, Layout, MenuItemType, Text } from '@ui-kitten/components';
-import { BookIcon, GithubIcon } from './icons';
+import { DashboardsIcon, TaskIcon} from './icons';
 
 const DATA: MenuItemType[] = [
-  { title: 'Libraries', icon: GithubIcon },
-  { title: 'Documentation', icon: BookIcon },
+  { title: 'Toutes vos taches', icon: TaskIcon},
+  { title: 'Liste des projets', icon: DashboardsIcon},
 ];
-
 
 export const HomeDrawer = ({ navigation }: any ): DrawerElement => {
 
@@ -16,11 +15,14 @@ export const HomeDrawer = ({ navigation }: any ): DrawerElement => {
     switch (index) {
       case 0: {
         navigation.toggleDrawer();
-        navigation.navigate('Libraries');
+        navigation.navigate('Ecran accueil');
+        navigation.setOptions({title: DATA[0].title});
         return;
       }
       case 1: {
         navigation.toggleDrawer();
+        navigation.navigate('Liste des projets');
+        navigation.setOptions({title: DATA[1].title});
         return;
       }
     }

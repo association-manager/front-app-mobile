@@ -3,8 +3,12 @@ import { StyleSheet } from 'react-native';
 import { TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 import { ArrowIosBackIcon } from '../components/icons';
 import ContentView from '../components/project-task-detail.component';
+import { useFocusEffect } from '@react-navigation/native';
 
-export const ProjectTaskDetailScreen = ({ navigation, state}: any): React.ReactElement => {
+
+export const ProjectTaskDetailScreen = ({ navigation }: any): React.ReactElement => {
+
+  useFocusEffect(React.useCallback(()=> navigation.setOptions({title:'tache'}),[navigation]));
 
   const renderBackAction = (): React.ReactElement => (
     <TopNavigationAction

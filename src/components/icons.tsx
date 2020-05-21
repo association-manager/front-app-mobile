@@ -118,6 +118,14 @@ export const AssetDashboardsIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} pack='app' name='dashboards'/>
 );
 
+/**
+ * Home-drawer icon : to render a right icon witout warning
+ * @param style 
+ */
+export const DashboardsIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} pack='app' name='dashboard'/>
+);
+
 export const AssetDashboardsDarkIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} pack='app' name='dashboards-dark'/>
 );
@@ -328,6 +336,10 @@ export const AssetTopNavigationIcon = (style: ImageStyle): IconElement => (
 
 export const AssetTopNavigationDarkIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} pack='app' name='top-navigation-dark'/>
+);
+
+export const TaskIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='clipboard-outline'/>
 );
 
 export const HeartIcon = (style: ImageStyle): IconElement => (

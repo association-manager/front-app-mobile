@@ -49,8 +49,7 @@ export default ({ navigation }): React.ReactElement => {
           onPress={onAllProjectsTaskssView}>
           Tâches des projets
         </Button>
-      <Text 
-      category='h1'
+      <Text category='h1'
         style={styles.projectsBetweenTasks}>|</Text>
         <Button
           appearance='ghost'

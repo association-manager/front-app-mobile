@@ -30,7 +30,7 @@ const Stack = createStackNavigator();
 export const AuthNavigator = (): React.ReactElement => (
   <Stack.Navigator headerMode='none'>
     <Stack.Screen name='SignIn4' component={SignIn4Screen}/>
-    <Stack.Screen name='ForgotPassword' component={ForgotPasswordScreen}/> 
+    <Stack.Screen name='ForgotPassword' component={ForgotPasswordScreen}/>
     <Stack.Screen name='AppNavigator' component={HomeNavigator}/>
     <Stack.Screen name='UserProfileEdit' component={UserProfileEdit}/>
     <Stack.Screen name='Chat2' component={Chat2Screen}/>

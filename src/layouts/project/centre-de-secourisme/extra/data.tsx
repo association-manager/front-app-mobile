@@ -24,7 +24,7 @@ export class Association {
 
   constructor(readonly name: string,
               readonly image: ImageSourcePropType,
-              readonly createdAt: string,) {
+              readonly createdAt: string) {
   }
 
   get fullName(): string {

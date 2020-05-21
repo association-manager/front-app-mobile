@@ -11,7 +11,7 @@ const layoutItemnStyle = StyleSheet.create({
   itemDescription: {
     marginTop: 12,
     textAlign: 'center',
-    color:'darkgray',
+    color: 'darkgray',
     backgroundColor: 'rgba(0, 0, 0, 0.14)',
   },
 item: {
@@ -20,8 +20,7 @@ item: {
     margin: 8,
     maxWidth: Dimensions.get('window').width / 2 - 24,
     borderBottomColor: 'black',
-    borderRightColor: 'black'
-    
+    borderRightColor: 'black',
   },
   itemImage: {
     alignSelf: 'center',
@@ -36,7 +35,6 @@ item: {
     ...StyleSheet.absoluteFillObject,
     height: 200,
     paddingTop: 16,
-    
   },
 });
 

@@ -12,7 +12,7 @@ const data: Project[] = [
 export default ({ navigation }): React.ReactElement => {
 
   const onItemPress = (index: number): void => {
-    navigation && navigation.navigate('DefaultProjectDetails');//
+    navigation && navigation.navigate('DefaultProjectDetails');
   };
 
 

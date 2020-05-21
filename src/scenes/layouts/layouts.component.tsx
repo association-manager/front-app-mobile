@@ -11,11 +11,9 @@ export const LayoutsScreen = (props): React.ReactElement => {
   const onHomeItemPress = (index: number): void => {
     props.navigation.navigate(data[index].route);
   };
-  
   const onItemPress = (): void => {
     props.navigation.navigate('ProjectsNavigator');
   };
-  
   const renderDrawerAction = (): React.ReactElement => (
     <TopNavigationAction
       icon={MenuIcon}
@@ -29,7 +27,6 @@ export const LayoutsScreen = (props): React.ReactElement => {
       onPress={() => navigation.navigate('Chat2')}
     />
   );
-  
   return (
     <SafeAreaLayout
       style={styles.safeArea}

@@ -53,7 +53,6 @@ export default ({ navigation }): React.ReactElement => {
       onPress={() => navigation.navigate('Chat2')}
     />
   );
-  
   return (
     <SafeAreaLayout
       style={styles.container}

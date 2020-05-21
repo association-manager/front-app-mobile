@@ -27,7 +27,7 @@ export const CoupeAngleterreDeFootballScreen = ({ navigation }): React.ReactElem
       style={styles.container}
       insets='top'>
       <TopNavigation
-        title="Coupe d'Angleterre de football"
+        title={'Coupe d\'Angleterre de football'}
         leftControl={renderBackAction()}
         rightControls={renderChatAction()}
       />

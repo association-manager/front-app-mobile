@@ -27,7 +27,7 @@ export const CentreDeSecourismeScreen = ({ navigation }): React.ReactElement => 
       style={styles.container}
       insets='top'>
       <TopNavigation
-        title="Centre de secourisme"
+        title='Centre de secourisme'
         leftControl={renderBackAction()}
         rightControls={renderChatAction()}
       />

@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 const layoutStyle = StyleSheet.create({
     area : {
-        flex: 1
+        flex: 1,
     },
     container: {
       flex: 1,

@@ -64,7 +64,7 @@ export const AllProjectTasksScreen = ({ navigation }): React.ReactElement => {
       style={styles.safeArea}
       insets='top'>
       <TopNavigation
-        title="Tâches de tous les projets de l'association"
+        title='Tâches des projets de cette association'
         leftControl={renderBackAction()}
       />
       <List

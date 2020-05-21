@@ -7,7 +7,7 @@ import {
   EmailIcon,
   TextIcon,
 } from '../../../components/extra/icons';
-import { KeyboardAvoidingView } from '../../../components/extra/3rd-party';//
+import { KeyboardAvoidingView } from '../../../components/extra/3rd-party';
 import { ArrowIosBackIcon, MessageCircleIcon } from '../../../components/icons';
 import { SafeAreaLayout } from '../../../components/safe-area-layout.component';
 
@@ -39,13 +39,12 @@ export default ({ navigation }): React.ReactElement => {
       onPress={() => navigation.navigate('Chat2')}
     />
   );
-  
   return (
     <SafeAreaLayout
       style={styles.container}
       insets='top'>
       <TopNavigation
-        title="Mise à jour de la tâche"
+        title='Mise à jour de la tâche'
         leftControl={renderBackAction()}
         rightControls={renderChatAction()}
       />
@@ -96,17 +95,15 @@ export default ({ navigation }): React.ReactElement => {
               style={styles.titleRadioGroup}>
               {`Nouveau statut: ${selectedIndex + 1}`}
             </Text>
-        
             <RadioGroup style={styles.defaultRadioGroup}
               selectedIndex={selectedIndex}
               onChange={index => setSelectedIndex(index)}>
-              <Radio text="A faire">A faire</Radio>
-              <Radio text="En cours">En cours</Radio>
-              <Radio text="Terminée">Terminée</Radio>
+              <Radio text='A faire'>A faire</Radio>
+              <Radio text='En cours'>En cours</Radio>
+              <Radio text='Terminée'>Terminée</Radio>
             </RadioGroup>
 
           </View>
-          
           <Button
             style={styles.confirmEditButton}
             size='giant'

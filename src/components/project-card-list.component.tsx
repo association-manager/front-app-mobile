@@ -35,7 +35,6 @@ export const ProjectCardList = (props: ProjectCardListProps): ListElement => {
         </Text>
       </ImageOverlay>
     </Card>
- 
   );
 
 

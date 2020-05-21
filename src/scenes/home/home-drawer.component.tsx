@@ -27,7 +27,6 @@ import { SafeAreaLayout } from '../../components/safe-area-layout.component';
      { title: 'Libraries', icon: GithubIcon },
      { title: 'Documentation', icon: BookIcon },
    ];
-  
   */}
 
 
@@ -46,7 +45,6 @@ const PROJECT: MenuItemType[] = [
   { title: 'Financer la construction d\'un centre de secourisme et de formation', icon: BookIcon },
   { title: 'Coupe d\'Angleterre de football', icon: BookIcon },
   { title: 'Alimentation pour tous', icon: BookIcon },
-  
 ];
 // End Project List map
 
@@ -136,7 +134,7 @@ export const HomeDrawer = ({ navigation }): DrawerElement => {
   };
   // End LogoutManager Navigation Link
 
-  // Profile 
+  // Profile
   const onProfileEdit = (): void => {
     navigation && navigation.navigate('UserProfileEdit');
   };

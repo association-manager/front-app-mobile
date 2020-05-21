@@ -17,7 +17,7 @@ export const themedStyles = StyleService.create({
   },
   titleLabel: {
     marginHorizontal: 24,
-    marginVertical: 16,
+    marginVertical: 12,
   },
   sectionLabel: {
     margin: 8,
@@ -33,7 +33,7 @@ export const themedStyles = StyleService.create({
     marginHorizontal: 24,
   },
   dateLabel: {
-    marginHorizontal: 8,
+    marginHorizontal: 32,
   },
   commentInputLabel: {
     fontSize: 16,

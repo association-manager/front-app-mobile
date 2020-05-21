@@ -1,16 +1,8 @@
 import React from 'react';
 import { ListRenderItemInfo, StyleSheet, View } from 'react-native';
-import {
-  Avatar,
-  Button,
-  Card,
-  CardHeaderElement,
-  List,
-  ListProps,
-  Text,
-} from '@ui-kitten/components';
-import { HeartIcon, MessageCircleIcon, MoreHorizontalIcon } from '../layouts/project-task-detail/extra/icons';
-import { Comment } from '../layouts/project-task-detail/extra/data';
+import { Avatar, Button, Card, CardHeaderElement, List, ListProps, Text } from '@ui-kitten/components';
+import { HeartIcon, MessageCircleIcon, MoreHorizontalIcon } from './icons';
+import { Comment } from '../services/projectTaskDetailData';
 
 export type CommentListProps = Omit<ListProps, 'renderItem'>;
 
@@ -44,13 +36,6 @@ export const CommentList = (props: CommentListProps): React.ReactElement => {
           status='basic'
           icon={MessageCircleIcon}>
           {`${info.item.comments.length}`}
-        </Button>
-        <Button
-          style={styles.iconButton}
-          appearance='ghost'
-          status='danger'
-          icon={HeartIcon}>
-          {`${info.item.likes.length}`}
         </Button>
       </View>
     </Card>

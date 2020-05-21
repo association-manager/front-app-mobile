@@ -1,19 +1,11 @@
 import React from 'react';
 import {Tab, TabBar} from '@ui-kitten/components';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ArrowIosBackIcon } from '../components/icons';
 import { TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 
 //import styles from '../assets/styles/layoutItemStyle.style';
 
 export const ProjectTasksTabBar = ({ navigation, state } :any): React.ReactElement => {
-
-  const renderBackAction = (): React.ReactElement => (
-    <TopNavigationAction
-      icon={ArrowIosBackIcon}
-      onPress={navigation.goBack}
-    />
-  );
 
   const onTabSelect = (index: number): void => {
     navigation.navigate(state.routeNames[index]);
@@ -27,17 +19,13 @@ export const ProjectTasksTabBar = ({ navigation, state } :any): React.ReactEleme
   );
 
   return (
-    <SafeAreaProvider>
-      <TopNavigation
-      title='Retour'
-      leftControl={renderBackAction()}
-      />
+    <>
       <TabBar
           //style={styles.container}
           selectedIndex={state.index}
           onSelect={onTabSelect}>
           {state.routeNames.map(renderTab)}
       </TabBar>
-    </SafeAreaProvider>
+    </>
   );
 };

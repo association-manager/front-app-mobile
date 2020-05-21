@@ -1,24 +1,29 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { DarkTheme, NavigationContainer } from '@react-navigation/native';
 import { HomeNavigator } from '../navigation/home.navigator';
 
+import { dark as appDarkTheme } from '@eva-design/eva';
+
+
+const evaDarkTheme = {
+  ...appDarkTheme
+}
 /*
  * Navigation theming: https://reactnavigation.org/docs/en/next/themes.html
  */
 const navigatorTheme = {
-  ...DefaultTheme,
+    ...DarkTheme,
   colors: {
-    ...DefaultTheme.colors,
+   ...DarkTheme.colors,
     // prevent layout blinking when performing navigation
-    background: 'transparent',
+    background: 'transparent'
   },
 };
 
-
 export const AppNavigator = () => (
-  <NavigationContainer theme={navigatorTheme}>
-    <HomeNavigator/>
+  <NavigationContainer theme={navigatorTheme}  >
+    <HomeNavigator />
     {/* <AuthNavigator/> */}
   </NavigationContainer>
 );

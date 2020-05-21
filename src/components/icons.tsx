@@ -42,6 +42,10 @@ export const GridIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} name='grid-outline'/>
 );
 
+export const HomeIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='home-outline'/>
+);
+
 export const LayoutIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} name='layout-outline'/>
 );
@@ -324,5 +328,17 @@ export const AssetTopNavigationIcon = (style: ImageStyle): IconElement => (
 
 export const AssetTopNavigationDarkIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} pack='app' name='top-navigation-dark'/>
+);
+
+export const HeartIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='heart'/>
+);
+
+export const MessageCircleIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='message-circle-outline'/>
+);
+
+export const MoreHorizontalIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='more-horizontal'/>
 );
 

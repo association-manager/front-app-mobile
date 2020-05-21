@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 import { ArrowIosBackIcon } from '../components/icons';
-import ContentView from '../layouts/project-task-detail';
+import ContentView from '../components/project-task-detail.component';
 
 export const ProjectTaskDetailScreen = ({ navigation, state}: any): React.ReactElement => {
 

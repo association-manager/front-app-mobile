@@ -1,5 +1,5 @@
-import { ProjectTaskItem, Profile, Comment } from '../models/project-task-item.model';
-import { ProjectTaskListItem } from '../models/project-task-list-item.models';
+import { ProjectTaskItem, Profile, Comment } from '../model/project-task-item.model';
+import { ProjectTaskListItem } from '../model/project-task-list-item.models';
 
 
 export interface ProjectTaskData extends ProjectTaskItem {

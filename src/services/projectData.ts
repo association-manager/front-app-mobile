@@ -2,7 +2,7 @@
 import React from 'react';
 import { ImageStyle } from 'react-native';
 import { AssetDashboardsDarkIcon, AssetDashboardsIcon } from '../components/icons';
-import { ProjectItem } from '../models/project-item.model';
+import { ProjectItem } from '../model/project-item.model';
 import { IconElement, IconProps } from '@ui-kitten/components';
 
 export interface ThemedIconProps extends Omit<IconProps, 'name'> {

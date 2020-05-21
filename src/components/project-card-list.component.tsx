@@ -2,7 +2,7 @@ import React from 'react';
 import { ListRenderItemInfo, Image} from 'react-native';
 import { Card, List, ListElement, ListItemElement, ListProps, Text } from '@ui-kitten/components';
 import { ImageOverlay } from '../layouts/projects/extra/image-overlay.component';
-import { ProjectItem } from '../models/project-item.model';
+import { ProjectItem } from '../model/project-item.model';
 
 import styles from '../assets/styles/layoutItemStyle.style';
 

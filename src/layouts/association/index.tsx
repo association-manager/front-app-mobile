@@ -12,7 +12,7 @@ const data: Association[] = [
 export default ({ navigation }): React.ReactElement => {
 
   const onItemPress = (index: number): void => {
-    navigation && navigation.navigate('DefaultAssociation'); 
+    navigation && navigation.navigate('DefaultAssociation');
   };
 
   const renderItemHeader = (info: ListRenderItemInfo<Association>): React.ReactElement => (

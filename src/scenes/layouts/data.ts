@@ -9,7 +9,7 @@ import {
   ProjectsDarkIcon,
   ProjectsIcon,
   CollaboratorsDarkIcon,
-  CollaboratorsIcon
+  CollaboratorsIcon,
 } from '../../components/icons';
 import { MenuItem } from '../../model/menu-item.model';
 

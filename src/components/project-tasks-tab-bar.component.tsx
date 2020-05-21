@@ -4,7 +4,7 @@ import { ArrowIosBackIcon } from '../components/icons';
 import { TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 
 import styles from '../assets/styles/layoutItemStyle.style';
-export const ProjectTasksTabBar = ({ navigation, state } :any): React.ReactElement => {
+export const ProjectTasksTabBar = ({ navigation, state }: any): React.ReactElement => {
 
   const renderBackAction = (): React.ReactElement => (
     <TopNavigationAction

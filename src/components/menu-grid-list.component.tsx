@@ -1,13 +1,10 @@
 import React from 'react';
-import { ListRenderItemInfo, Image} from 'react-native';
+import { Dimensions, ListRenderItemInfo, StyleSheet } from 'react-native';
 import { Card, List, ListElement, ListItemElement, ListProps, Text } from '@ui-kitten/components';
-import { ImageOverlay } from './image-overlay.component';
-import { ProjectItem } from '../models/project-item.model';
-
-import styles from '../assets/styles/layoutItemStyle.style';
+import { MenuItem } from '../model/menu-item.model';
 
 export interface MenuGridListProps extends Omit<ListProps, 'renderItem'> {
-  data: ProjectItem[];
+  data: MenuItem[];
   onItemPress: (index: number) => void;
 }
 
@@ -15,25 +12,16 @@ export const MenuGridList = (props: MenuGridListProps): ListElement => {
 
   const { contentContainerStyle, onItemPress, ...listProps } = props;
 
-  const renderItem = (info: ListRenderItemInfo<ProjectItem>): ListItemElement => (
+  const renderItem = (info: ListRenderItemInfo<MenuItem>): ListItemElement => (
     <Card
       style={styles.item}
       onPress={() => props.onItemPress(info.index)}>
-      <ImageOverlay
-        style={styles.image}
-        source={info.item.image}>
       {info.item.icon({ width: 64, height: 64, alignSelf: 'center' })}
       <Text
         style={styles.itemTitle}
         category='s2'>
         {info.item.title}
       </Text>
-      <Text
-        style={styles.itemDescription}
-        appearance='hint'>
-        {info.item.description}
-      </Text>
-      </ImageOverlay>
     </Card>
   );
 
@@ -47,3 +35,25 @@ export const MenuGridList = (props: MenuGridListProps): ListElement => {
     />
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 8,
+  },
+  item: {
+    flex: 1,
+    justifyContent: 'center',
+    aspectRatio: 1.0,
+    margin: 8,
+    maxWidth: Dimensions.get('window').width / 2 - 24,
+  },
+  itemImage: {
+    alignSelf: 'center',
+    width: 64,
+    height: 64,
+  },
+  itemTitle: {
+    alignSelf: 'center',
+    marginTop: 8,
+  },
+});

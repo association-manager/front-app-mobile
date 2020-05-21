@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Button, Input, Text } from '@ui-kitten/components';
-import { ImageOverlay } from './extra/image-overlay.component';
-import { EmailIcon } from './extra/icons';
-import { KeyboardAvoidingView } from './extra/3rd-party';
+import { ImageOverlay } from '../../../components/extra/image-overlay.component';
+import { EmailIcon } from '../../../components/extra/icons';
+import { KeyboardAvoidingView } from '../../../components/extra/3rd-party';
 
-export default ({ navigation }: any): React.ReactElement => {
+export default ({ navigation }): React.ReactElement => {
 
   const [email, setEmail] = React.useState<string>();
 
@@ -17,17 +17,17 @@ export default ({ navigation }: any): React.ReactElement => {
     <KeyboardAvoidingView>
       <ImageOverlay
         style={styles.container}
-        source={require('./assets/image-background.jpg')}>
+        source={require('../../../assets/images/image-splash.png')}>
         <Text
           style={styles.forgotPasswordLabel}
           category='h4'
           status='control'>
-          Forgot Password
+          Mot de passe oublié
         </Text>
         <Text
           style={styles.enterEmailLabel}
           status='control'>
-          Please enter your email address
+          Veuillez saisir votre adresse e-mail
         </Text>
         <View style={styles.formContainer}>
           <Input
@@ -41,7 +41,7 @@ export default ({ navigation }: any): React.ReactElement => {
         <Button
           size='giant'
           onPress={onResetPasswordButtonPress}>
-          RESET PASSWORD
+          Réinitialiser le mot de passe
         </Button>
       </ImageOverlay>
     </KeyboardAvoidingView>

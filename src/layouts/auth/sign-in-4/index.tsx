@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Button, Input, Text } from '@ui-kitten/components';
-import { ImageOverlay } from './extra/image-overlay.component';
+import { Button, Input, Text, Avatar } from '@ui-kitten/components';
+import { ImageOverlay } from '../../../components/extra/image-overlay.component';
 import {
   EyeIcon,
   EyeOffIcon,
@@ -9,21 +9,17 @@ import {
   GoogleIcon,
   PersonIcon,
   TwitterIcon,
-} from './extra/icons';
-import { KeyboardAvoidingView } from './extra/3rd-party';
+} from '../../../components/extra/icons';
+import { KeyboardAvoidingView } from '../../../components/extra/3rd-party';
 
-export default ({ navigation }: any): React.ReactElement => {
+export default ({ navigation }): React.ReactElement => {
 
   const [email, setEmail] = React.useState<string>();
   const [password, setPassword] = React.useState<string>();
   const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
 
   const onSignInButtonPress = (): void => {
-    navigation && navigation.goBack();
-  };
-
-  const onSignUpButtonPress = (): void => {
-    navigation && navigation.navigate('SignUp4');
+    navigation && navigation.navigate('AppNavigator');
   };
 
   const onForgotPasswordButtonPress = (): void => {
@@ -38,18 +34,22 @@ export default ({ navigation }: any): React.ReactElement => {
     <KeyboardAvoidingView>
       <ImageOverlay
         style={styles.container}
-        source={require('./assets/image-background.jpg')}>
+        source={require('../../../assets/images/image-splash.png')}>
         <View style={styles.headerContainer}>
+          <Avatar
+          size='giant'
+            source={require('../../../assets/images/image-app-icon_.png')}
+          />
           <Text
             category='h1'
             status='control'>
-            Hello
+            Bonjour
           </Text>
           <Text
             style={styles.signInLabel}
             category='s1'
             status='control'>
-            Sign in to your account
+            Connectez-vous à votre compte Association Manager
           </Text>
         </View>
         <View style={styles.formContainer}>
@@ -63,7 +63,7 @@ export default ({ navigation }: any): React.ReactElement => {
           <Input
             style={styles.passwordInput}
             status='control'
-            placeholder='Password'
+            placeholder='Mot de passe'
             icon={passwordVisible ? EyeIcon : EyeOffIcon}
             value={password}
             secureTextEntry={!passwordVisible}
@@ -76,7 +76,7 @@ export default ({ navigation }: any): React.ReactElement => {
               appearance='ghost'
               status='control'
               onPress={onForgotPasswordButtonPress}>
-              Forgot your password?
+              Mot de passe oublié?
             </Button>
           </View>
         </View>
@@ -84,13 +84,13 @@ export default ({ navigation }: any): React.ReactElement => {
           style={styles.signInButton}
           size='giant'
           onPress={onSignInButtonPress}>
-          SIGN IN
+          Se connecter
         </Button>
         <View style={styles.socialAuthContainer}>
           <Text
             style={styles.socialAuthHintText}
             status='control'>
-            Or Sign In using Social Media
+            Ou connectez-vous en utilisant les réseaux sociaux
           </Text>
           <View style={styles.socialAuthButtonsContainer}>
             <Button
@@ -113,13 +113,6 @@ export default ({ navigation }: any): React.ReactElement => {
             />
           </View>
         </View>
-        <Button
-          style={styles.signUpButton}
-          appearance='ghost'
-          status='control'
-          onPress={onSignUpButtonPress}>
-          Don't have an account? Sign Up
-        </Button>
       </ImageOverlay>
     </KeyboardAvoidingView>
   );

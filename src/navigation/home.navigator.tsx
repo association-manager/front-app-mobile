@@ -1,14 +1,33 @@
+
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { HomeScreen } from '../screens/home.screen';
-import { ProjectTasksNavigator } from './project-tasks.navigator';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { LayoutsNavigator } from './layouts.navigator';
+import { HomeDrawer } from '../scenes/home/home-drawer.component';
+
+{/* New entiries */}
+  
+
 import { ProjectNavigator } from './projects.navigator';
 
-const Stack = createStackNavigator();
 
-export const HomeNavigator = () => (
-  <Stack.Navigator initialRouteName="Home">
-    <Stack.Screen name='Home' component={HomeScreen}/>
-    <Stack.Screen name='ProjectsNavigator' component={ProjectNavigator}/>
-  </Stack.Navigator>
+const Drawer = createDrawerNavigator();
+
+/*
+ * Can we access it from `HomeNavigator`?
+ */
+const ROOT_ROUTES: string[] = ['Home', 'Layouts']; 
+
+export const HomeNavigator = (): React.ReactElement => (
+  <Drawer.Navigator
+    screenOptions={{ gestureEnabled: false }}
+    drawerContent={props => <HomeDrawer {...props}/>}>
+    <Drawer.Screen name='Home' component={LayoutsNavigator}/>
+
+    {/* New entiries */}
+    
+    
+    <Drawer.Screen name='ProjectsNavigator' component={ProjectNavigator}/>
+
+    
+  </Drawer.Navigator>
 );

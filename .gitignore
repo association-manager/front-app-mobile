@@ -36,6 +36,7 @@ local.properties
 # node.js
 #
 node_modules/
+package-lock.json
 npm-debug.log
 yarn-error.log
 
@@ -63,5 +64,18 @@ buck-out/
 /ios/Pods/
 
 #expo
-.expo/
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
 web-build/
+web-report/
+
+# macOS
+.DS_Store
+.expo/packager-info.json

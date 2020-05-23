@@ -354,3 +354,19 @@ export const MoreHorizontalIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} name='more-horizontal'/>
 );
 
+// Custom icons :
+export const InfoIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='info'/>
+);
+
+export const PeopleIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='people-outline'/>
+);
+
+export const AssociationManagerDarkIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='association-manager-dark'/>
+);
+
+export const AssociationManagerIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='association-manager'/>
+);

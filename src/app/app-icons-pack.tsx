@@ -32,6 +32,8 @@ export const AppIconsPack = {
     'dashboards': IconProvider(require('../assets/images/icon-dashboards.png')),
     'dashboard': IconProviderLess(require('../assets/images/icon-dashboards.png')),
     'dashboards-dark': IconProvider(require('../assets/images/icon-dashboards-dark.png')),
+    'association-profile': IconProvider(require('../assets/images/association-manager.png')),
+    'association-profile-dark': IconProvider(require('../assets/images/association-manager-dark.png')),
     'autocomplete': IconProvider(require('../assets/images/icon-autocomplete.png')),
     'autocomplete-dark': IconProvider(require('../assets/images/icon-autocomplete-dark.png')),
     'avatar': IconProvider(require('../assets/images/icon-avatar.png')),

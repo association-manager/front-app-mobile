@@ -4,13 +4,13 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { ProjectTasksNavigator } from './project-tasks.navigator';
 import { AssociationsListNavigator } from './associations-list.navigator';
 import { AssociationProfileNavigator } from './association-profile.navigator';
-// import { AssociationProfileScreen } from '../screens/associations-grid.screen';
 import { Button, TopNavigationAction} from '@ui-kitten/components';
 import { ProjectsScreen } from '../screens/projects.screen';
 import { HomeDrawer } from '../components/home-drawer.component';
 import { MenuIcon, ArrowIosBackIcon } from '../components/icons';
 import { DrawerActions } from '@react-navigation/native';
 import { DashboardNavigator } from './dashboard-app.navigator';
+import { UserProfileScreen } from '../screens/user-profile.screen';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -30,9 +30,9 @@ const HomeDrawerNavigator = () => (
     <Drawer.Screen name='Ecran accueil' component={ProjectTasksNavigator}/>
     <Drawer.Screen name='Liste des projets' component={ProjectsScreen}/>
     <Drawer.Screen name='Liste des associations' component={AssociationsListNavigator} options={{title: 'Liste des associations'}}/>
-    {/* <Drawer.Screen name='Liste des associations' component={AssociationProfileNavigator}/> */}
     <Stack.Screen name="Profile de l'association" component={AssociationProfileNavigator} options={{title: "Profile de l'association"}}/>
     <Stack.Screen name='Tableau de bord' component={DashboardNavigator} options={{title: 'Tableau de bord'}}/>
+    <Stack.Screen name='Mon profil' component={UserProfileScreen} options={{title: 'Mon profil'}}/>
   </Drawer.Navigator>
 )
 
@@ -44,10 +44,10 @@ export const HomeNavigator = () => (
       headerBackTitleVisible: false  })}>
     <Stack.Screen name='Accueil' component={HomeDrawerNavigator}/>
     <Stack.Screen name='Liste des projets' component={ProjectsScreen} options={{title: 'Liste des projets'}}/>
-    {/* <Stack.Screen name='Liste des associations' component={AssociationProfileScreen} options={{title: 'Liste des associations'}}/> */}
     <Stack.Screen name='Liste des associations' component={AssociationsListNavigator} options={{title: 'Liste des associations'}}/>
     <Stack.Screen name="Profile de l'association" component={AssociationProfileNavigator} options={{title: "Profile de l'association"}}/>
     <Stack.Screen name='Tableau de bord' component={DashboardNavigator} options={{title: 'Tableau de bord'}}/>
+    <Stack.Screen name='Mon profil' component={UserProfileScreen} options={{title: 'Mon profil'}}/>
     <Stack.Screen name='Tâches projet' component={ProjectTasksNavigator} 
       options={({ navigation })=>({
         headerLeft:()=> 

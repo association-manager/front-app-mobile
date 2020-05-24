@@ -2,13 +2,15 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Avatar, Divider, Drawer, DrawerElement, DrawerHeaderElement, DrawerHeaderFooter} from '@ui-kitten/components';
 import { DrawerHeaderFooterElement, Layout, MenuItemType, Text } from '@ui-kitten/components';
-import { DashboardIcon, TaskIcon, PeopleIcon, GridIcon} from './icons';
+import { DashboardIcon, TaskIcon, PeopleIcon, GridIcon, PowerIcon, PersonIcon} from './icons';
 
 const DATA: MenuItemType[] = [
   { title: 'Toutes vos taches', icon: TaskIcon},
   { title: 'Liste des projets', icon: DashboardIcon},
   { title: 'Liste des associations', icon: PeopleIcon},
   { title: 'Tableau de bord', icon: GridIcon},
+  { title: 'Mon profil', icon: PersonIcon},
+  { title: 'Déconnexion', icon: PowerIcon},
 ];
 
 export const HomeDrawer = ({ navigation }: any ): DrawerElement => {
@@ -37,6 +39,18 @@ export const HomeDrawer = ({ navigation }: any ): DrawerElement => {
         navigation.toggleDrawer();
         navigation.navigate('Tableau de bord');
         navigation.setOptions({title: DATA[3].title});
+        return;
+      }
+      case 4: {
+        navigation.toggleDrawer();
+        navigation.navigate('Mon profil');
+        navigation.setOptions({title: DATA[4].title});
+        return;
+      }
+      case 5: {
+        navigation.toggleDrawer();
+        navigation.navigate('UserLoginPage');
+        navigation.setOptions({title: DATA[5].title});
         return;
       }
     }

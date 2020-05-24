@@ -28,7 +28,7 @@ export const AssociationCardList = (props: AssociationCardListProps): ListElemen
   };
 
   const onAssociationMoreDetailsButtonPress = (): void => {
-    props.navigation.navigate('Profile');
+    props.navigation.navigate("Profile de l'association");
   };
 
   const renderItem = (info: ListRenderItemInfo<Association>): CardElement => (

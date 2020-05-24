@@ -7,6 +7,6 @@ const Stack = createStackNavigator();
 
 export const AssociationProfileNavigator = (): React.ReactElement => (
   <Stack.Navigator headerMode='none'>
-    <Stack.Screen name='AssociationProfileScreen' component={AssociationProfileScreen} options={{title: 'Profile de l\'association'}}/>
+    <Stack.Screen name="Profile de l'association" component={AssociationProfileScreen} options={{title: "Profile de l'association"}}/>
   </Stack.Navigator>
 );

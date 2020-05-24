@@ -181,6 +181,45 @@ export const CollaboratorsDarkIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} pack='app' name='collaborators-dark'/>
 );
 
+export const EyeIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='eye'/>
+);
+
+export const EyeOffIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='eye-off'/>
+);
+
+export const FacebookIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='facebook'/>
+);
+
+export const GoogleIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='google'/>
+);
+
+export const PersonIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='person'/>
+);
+
+export const TwitterIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='twitter'/>
+);
+
+export const PowerIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='power-outline'/>
+);
+
+export const EmailIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='email'/>
+);
+
+export const PhoneIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='phone'/>
+);
+
+export const GlobeIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} name='globe'/>
+);
 /**
  * Home-drawer icon : to render a right icon witout warning
  * @param style 

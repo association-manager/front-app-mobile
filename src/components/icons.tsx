@@ -82,6 +82,7 @@ export const TrashIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} name='trash'/>
 );
 
+// custom icons
 export const AssetAuthIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} pack='app' name='auth'/>
 );
@@ -114,21 +115,50 @@ export const AssetMessagingDarkIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} pack='app' name='messaging-dark'/>
 );
 
-export const AssetDashboardsIcon = (style: ImageStyle): IconElement => (
-  <Icon {...style} pack='app' name='dashboards'/>
+export const DashboardIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} pack='app' name='dashboard'/>
+);
+
+export const DashboardDarkIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} pack='app' name='dashboard-dark'/>
+);
+
+export const ProjectTasksListIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} pack='app' name='tasks-list'/>
+);
+
+export const ProjectTasksListDarkIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} pack='app' name='tasks-list-dark'/>
+);
+
+export const ProjectsIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} pack='app' name='projects'/>
+);
+
+export const ProjectsDarkIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} pack='app' name='projects-dark'/>
+);
+
+export const AssociationIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} pack='app' name='association'/>
+);
+
+export const AssociationDarkIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} pack='app' name='association-dark'/>
+);
+
+export const CollaboratorsIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} pack='app' name='collaborators'/>
+);
+
+export const CollaboratorsDarkIcon = (style: ImageStyle): IconElement => (
+  <Icon {...style} pack='app' name='collaborators-dark'/>
 );
 
 /**
  * Home-drawer icon : to render a right icon witout warning
  * @param style 
  */
-export const DashboardsIcon = (style: ImageStyle): IconElement => (
-  <Icon {...style} pack='app' name='dashboard'/>
-);
-
-export const AssetDashboardsDarkIcon = (style: ImageStyle): IconElement => (
-  <Icon {...style} pack='app' name='dashboards-dark'/>
-);
 
 export const AssetEcommerceIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} pack='app' name='ecommerce'/>

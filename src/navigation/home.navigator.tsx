@@ -10,6 +10,7 @@ import { ProjectsScreen } from '../screens/projects.screen';
 import { HomeDrawer } from '../components/home-drawer.component';
 import { MenuIcon, ArrowIosBackIcon } from '../components/icons';
 import { DrawerActions } from '@react-navigation/native';
+import { DashboardNavigator } from './dashboard-app.navigator';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -30,7 +31,8 @@ const HomeDrawerNavigator = () => (
     <Drawer.Screen name='Liste des projets' component={ProjectsScreen}/>
     <Drawer.Screen name='Liste des associations' component={AssociationsListNavigator} options={{title: 'Liste des associations'}}/>
     {/* <Drawer.Screen name='Liste des associations' component={AssociationProfileNavigator}/> */}
-    <Stack.Screen name='Profile' component={AssociationProfileNavigator} options={{title: 'Profile de l\'association'}}/>
+    <Stack.Screen name="Profile de l'association" component={AssociationProfileNavigator} options={{title: "Profile de l'association"}}/>
+    <Stack.Screen name='Tableau de bord' component={DashboardNavigator} options={{title: 'Tableau de bord'}}/>
   </Drawer.Navigator>
 )
 
@@ -44,7 +46,8 @@ export const HomeNavigator = () => (
     <Stack.Screen name='Liste des projets' component={ProjectsScreen} options={{title: 'Liste des projets'}}/>
     {/* <Stack.Screen name='Liste des associations' component={AssociationProfileScreen} options={{title: 'Liste des associations'}}/> */}
     <Stack.Screen name='Liste des associations' component={AssociationsListNavigator} options={{title: 'Liste des associations'}}/>
-    <Stack.Screen name='Profile' component={AssociationProfileNavigator} options={{title: 'Profile de l\'association'}}/>
+    <Stack.Screen name="Profile de l'association" component={AssociationProfileNavigator} options={{title: "Profile de l'association"}}/>
+    <Stack.Screen name='Tableau de bord' component={DashboardNavigator} options={{title: 'Tableau de bord'}}/>
     <Stack.Screen name='Tâches projet' component={ProjectTasksNavigator} 
       options={({ navigation })=>({
         headerLeft:()=> 

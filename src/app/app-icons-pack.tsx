@@ -21,7 +21,7 @@ const IconProviderLess = (source: ImageRequireSource) => ({
   ),
 });
 
-
+// With customs icons import
 export const AppIconsPack = {
   name: 'app',
   icons: {
@@ -29,11 +29,18 @@ export const AppIconsPack = {
     'auth-dark': IconProvider(require('../assets/images/icon-auth-dark.png')),
     'messaging': IconProvider(require('../assets/images/icon-messaging.png')),
     'messaging-dark': IconProvider(require('../assets/images/icon-messaging-dark.png')),
-    'dashboards': IconProvider(require('../assets/images/icon-dashboards.png')),
-    'dashboard': IconProviderLess(require('../assets/images/icon-dashboards.png')),
-    'dashboards-dark': IconProvider(require('../assets/images/icon-dashboards-dark.png')),
+    'dashboard': IconProviderLess(require('../assets/images/icon-dashboard.png')),
+    'dashboard-dark': IconProvider(require('../assets/images/icon-dashboard-dark.png')),
     'association-profile': IconProvider(require('../assets/images/association-manager.png')),
     'association-profile-dark': IconProvider(require('../assets/images/association-manager-dark.png')),
+    'projects': IconProvider(require('../assets/images/icon-projects.png')),
+    'projects-dark': IconProvider(require('../assets/images/icon-projects-dark.png')),
+    'tasks-list': IconProvider(require('../assets/images/icon-tasks-list-dark.png')),
+    'tasks-list-dark': IconProvider(require('../assets/images/icon-tasks-list-dark.png')),
+    'collaborators': IconProvider(require('../assets/images/icon-collaborators-count.png')),
+    'collaborators-dark': IconProvider(require('../assets/images/icon-collaborators-count-dark.png')),
+    'association': IconProvider(require('../assets/images/icon-association.png')),
+    'association-dark': IconProvider(require('../assets/images/icon-association-dark.png')),
     'autocomplete': IconProvider(require('../assets/images/icon-autocomplete.png')),
     'autocomplete-dark': IconProvider(require('../assets/images/icon-autocomplete-dark.png')),
     'avatar': IconProvider(require('../assets/images/icon-avatar.png')),

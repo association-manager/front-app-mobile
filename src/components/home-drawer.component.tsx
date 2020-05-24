@@ -2,12 +2,13 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Avatar, Divider, Drawer, DrawerElement, DrawerHeaderElement, DrawerHeaderFooter} from '@ui-kitten/components';
 import { DrawerHeaderFooterElement, Layout, MenuItemType, Text } from '@ui-kitten/components';
-import { DashboardsIcon, TaskIcon, PeopleIcon} from './icons';
+import { DashboardIcon, TaskIcon, PeopleIcon, GridIcon} from './icons';
 
 const DATA: MenuItemType[] = [
   { title: 'Toutes vos taches', icon: TaskIcon},
-  { title: 'Liste des projets', icon: DashboardsIcon},
+  { title: 'Liste des projets', icon: DashboardIcon},
   { title: 'Liste des associations', icon: PeopleIcon},
+  { title: 'Tableau de bord', icon: GridIcon},
 ];
 
 export const HomeDrawer = ({ navigation }: any ): DrawerElement => {
@@ -30,6 +31,12 @@ export const HomeDrawer = ({ navigation }: any ): DrawerElement => {
         navigation.toggleDrawer();
         navigation.navigate('Liste des associations');
         navigation.setOptions({title: DATA[2].title});
+        return;
+      }
+      case 3: {
+        navigation.toggleDrawer();
+        navigation.navigate('Tableau de bord');
+        navigation.setOptions({title: DATA[3].title});
         return;
       }
     }

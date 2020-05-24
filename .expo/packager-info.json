@@ -1,10 +1,10 @@
 {
-  "devToolsPort": 19003,
+  "webpackServerPort": null,
   "expoServerPort": 19000,
-  "packagerPort": 19004,
-  "packagerPid": 1168,
-  "expoServerNgrokUrl": "https://ai-q2d.npetitbert.frontappmobile.exp.direct",
-  "packagerNgrokUrl": "https://packager.ai-q2d.npetitbert.frontappmobile.exp.direct",
-  "ngrokPid": 7344,
-  "webpackServerPort": null
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
+  "packagerPort": 19001,
+  "packagerPid": 12496,
+  "devToolsPort": 19002
 }

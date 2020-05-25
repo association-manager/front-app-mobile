@@ -1,6 +1,9 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
 const layoutItemnStyle = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   container: {
     padding: 8,
   },

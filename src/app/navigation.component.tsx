@@ -4,6 +4,7 @@ import { DarkTheme, NavigationContainer } from '@react-navigation/native';
 import { HomeNavigator } from '../navigation/home.navigator';
 
 import { dark as appDarkTheme } from '@eva-design/eva';
+import { AuthNavigator } from '../navigation/auth.navigation';
 
 
 const evaDarkTheme = {
@@ -23,7 +24,7 @@ const navigatorTheme = {
 
 export const AppNavigator = () => (
   <NavigationContainer theme={navigatorTheme}  >
-    <HomeNavigator />
-    {/* <AuthNavigator/> */}
+    {/* <HomeNavigator /> */}
+    <AuthNavigator/>
   </NavigationContainer>
 );

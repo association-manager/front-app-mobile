@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { ImageStyle } from 'react-native';
-import { AssetDashboardsDarkIcon, AssetDashboardsIcon } from '../components/icons';
+import { DashboardDarkIcon, DashboardIcon } from '../components/icons';
 import { ProjectItem } from '../models/project-item.model';
 import { IconElement, IconProps } from '@ui-kitten/components';
 
@@ -24,7 +24,7 @@ export const data: ProjectData[] = [
   {
     route: 'Tâches projet',
     title: 'Titre du projet',
-    icon: (style: ImageStyle) => React.createElement(ThemedIcon,{ ...style ,light: AssetDashboardsIcon, dark: AssetDashboardsDarkIcon }),
+    icon: (style: ImageStyle) => React.createElement(ThemedIcon,{ ...style ,light: DashboardIcon, dark: DashboardDarkIcon }),
     description:'Project description \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida id velit tempor efficitur. Nunc molestie scelerisque porttitor.',
     image: {uri: 'https://cdn.pixabay.com/photo/2015/03/15/08/46/head-674129__480.jpg'}
   },

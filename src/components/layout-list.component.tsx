@@ -33,7 +33,8 @@ export const LayoutList = (props: LayoutListProps): ListElement => {
   return (
     <List
       {...listProps}
-      contentContainerStyle={[styles.container, contentContainerStyle]}
+      style={styles.container}
+      contentContainerStyle={contentContainerStyle}
       renderItem={renderItem}
     />
   );

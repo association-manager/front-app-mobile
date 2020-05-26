@@ -8,11 +8,11 @@ import { ProjectTaskDetailScreen } from '../screens/project-task-detail.screen';
 const TopTab = createMaterialTopTabNavigator();
 const Stack = createStackNavigator();
 
-function getHeaderTitle(route: any) {
+const getHeaderTitle = (route: any) => {
   // Access the tab navigator's state using `route.state`
   const routeName = route.state
     ? // Get the currently active route name in the tab navigator
-      route.state.routes[route.state.index].name
+      route.state.routes[route.state.index].name.toString()
     : // If state doesn't exist, we need to default to `screen` param if available, or the initial screen
       // In our case, it's "Feed" as that's the first screen inside the navigator
       route.params?.screen || 'Tâches projet';
@@ -38,7 +38,7 @@ const ProjectTasksMenuNavigator = (): React.ReactElement => (
 export const ProjectTasksNavigator = (): React.ReactElement => (
   <Stack.Navigator headerMode='none'>
     <Stack.Screen name='ProjectsTaskMenu' component={ProjectTasksMenuNavigator} 
-      options={({ route }) => ({headerTitle: getHeaderTitle(route),})}/>
+      options={({ route }) => ({headerTitle: getHeaderTitle(route)})}/>
     <Stack.Screen name='ProjectTaskDetailScreen' component={ProjectTaskDetailScreen}/>
   </Stack.Navigator>
 );

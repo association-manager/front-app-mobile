@@ -5,7 +5,7 @@ const userProfile = StyleSheet.create({
         flex: 1,
     },
     headerContainer: {
-        minHeight: 216,
+        minHeight: 200,
         justifyContent: 'center',
         alignItems: 'center',
     },

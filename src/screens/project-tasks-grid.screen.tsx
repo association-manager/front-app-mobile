@@ -12,9 +12,9 @@ export const ProjectTasksGridScreen = ( {navigation, route}: any ): React.ReactE
   const displayProjectTaskData: ProjectTaskData[] = data.filter(data => data.progress.description === route.name);
 
   return (
-    <ProjectTaskCardList
-      data={ displayProjectTaskData }
-      onItemPress={onItemPress}
-    />
+        <ProjectTaskCardList
+          data={ displayProjectTaskData }
+          onItemPress={onItemPress}
+        />
   );
 };

@@ -47,7 +47,8 @@ export const DashboardCardList = (props: DashboardCardListProps): ListElement =>
   return (
     <List
       {...listProps}
-      contentContainerStyle={[styles.container, contentContainerStyle]}
+      style={styles.container}
+      contentContainerStyle={contentContainerStyle}
       numColumns={2}
       renderItem={renderItem}
     />

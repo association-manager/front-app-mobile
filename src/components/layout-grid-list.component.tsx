@@ -37,7 +37,8 @@ export const LayoutGridList = (props: LayoutGridListProps): ListElement => {
   return (
     <List
       {...listProps}
-      contentContainerStyle={[styles.container, contentContainerStyle]}
+      style={styles.container}
+      contentContainerStyle={contentContainerStyle}
       numColumns={2}
       renderItem={renderItem}
     />

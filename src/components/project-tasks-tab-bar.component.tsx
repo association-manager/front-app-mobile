@@ -1,9 +1,5 @@
 import React from 'react';
-import {Tab, TabBar} from '@ui-kitten/components';
-import { ArrowIosBackIcon } from '../components/icons';
-import { TopNavigation, TopNavigationAction } from '@ui-kitten/components';
-
-//import styles from '../assets/styles/layoutItemStyle.style';
+import {Tab, TabBar, Layout} from '@ui-kitten/components';
 
 export const ProjectTasksTabBar = ({ navigation, state } :any): React.ReactElement => {
 
@@ -19,13 +15,12 @@ export const ProjectTasksTabBar = ({ navigation, state } :any): React.ReactEleme
   );
 
   return (
-    <>
+    <Layout>
       <TabBar
-          //style={styles.container}
           selectedIndex={state.index}
           onSelect={onTabSelect}>
           {state.routeNames.map(renderTab)}
       </TabBar>
-    </>
+    </Layout>
   );
 };

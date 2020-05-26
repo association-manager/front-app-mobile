@@ -12,8 +12,9 @@ import {
 import { KeyboardAvoidingView } from '../../components/3rd-party';
 import { ArrowIosBackIcon, MessageCircleIcon } from '../../components/icons';
 import userProfile from '../../assets/styles/login-system/userProfile';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default ({ navigation }): React.ReactElement => {
+export default ({ navigation }: any ): React.ReactElement => {
   const [phoneNumber, setPhoneNumber] = React.useState<string>();
   const [email, setEmail] = React.useState<string>();
   const [address, setAddress] = React.useState<string>();
@@ -34,15 +35,9 @@ export default ({ navigation }): React.ReactElement => {
   };
 
 
-  const renderBackAction = (): React.ReactElement => (
-    <TopNavigationAction
-      icon={ArrowIosBackIcon}
-      onPress={navigation.goBack}
-    />
-  );
+  const renderBackAction = (): void => (navigation.goBack());
   
   return (
-    <>
       <KeyboardAvoidingView>
         <ImageOverlay
           style={userProfile.container}
@@ -53,7 +48,7 @@ export default ({ navigation }): React.ReactElement => {
               source={require('../../assets/images/image-app-icon.png')}
             />
             <Text
-              category='h1'
+              category='h3'
               status='control'>
               Nesly PETIT BERT
             </Text>
@@ -68,16 +63,6 @@ export default ({ navigation }): React.ReactElement => {
             <Input
               style={userProfile.orderInput}
               status='control'
-              placeholder='Téléphone'
-              icon={PhoneIcon}
-              value={phoneNumber}
-              defaultValue={'+33789548965'}
-              caption='Téléphone'
-              onChangeText={setPhoneNumber}
-            />
-            <Input
-              style={userProfile.orderInput}
-              status='control'
               placeholder='Email'
               icon={EmailIcon}
               value={email}
@@ -85,7 +70,7 @@ export default ({ navigation }): React.ReactElement => {
               onChangeText={setEmail}
               caption='E-mail'
             />
-            <Input
+   {/*          <Input
               style={userProfile.orderInput}
               status='control'
               placeholder='Adresse'
@@ -104,7 +89,7 @@ export default ({ navigation }): React.ReactElement => {
               defaultValue={'91120'}
               onChangeText={setPostalCode}
               caption='Code postal'
-            />
+            /> */}
             <Input
               style={userProfile.orderInput}
               status='control'
@@ -152,14 +137,19 @@ export default ({ navigation }): React.ReactElement => {
           </View>
           <Button
             style={userProfile.signInButton}
-            size='giant'
+            size='medium'
             onPress={onConfirmeditProfilPress}>
             Modifier mon profil
+          </Button>
+          <Button
+            style={[userProfile.signInButton, {backgroundColor:"Danger"}]}
+            size='medium'
+            onPress={renderBackAction}>
+            Annuler
           </Button>
           <View style={userProfile.userFormEditContainer}>
           </View>
         </ImageOverlay>
       </KeyboardAvoidingView>
-    </>
   );
 };

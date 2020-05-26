@@ -21,7 +21,6 @@ export type ProjectTaskCardListElement = React.ReactElement<ProjectTaskCardListP
  */
 export const ProjectTaskCardList = (props: ProjectTaskCardListProps): ListElement => {
 
-  //const displayTrainings: Training[] = trainings.filter(training => training.level === route.name);
 
   const { contentContainerStyle, onItemPress, ...listProps} = props;
 
@@ -47,7 +46,8 @@ export const ProjectTaskCardList = (props: ProjectTaskCardListProps): ListElemen
   return (
     <List
       {...listProps}
-      contentContainerStyle={[styles.container, contentContainerStyle]}
+      style={styles.container}
+      contentContainerStyle={contentContainerStyle}
       renderItem={renderItem}
     />
   );

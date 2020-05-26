@@ -57,7 +57,8 @@ export const AssociationCardList = (props: AssociationCardListProps): ListElemen
   return (
     <List
       {...listProps}
-      contentContainerStyle={[styles.container, contentContainerStyle]}
+      style={styles.container}
+      contentContainerStyle={contentContainerStyle}
       renderItem={renderItem}
     />
   );

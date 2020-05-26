@@ -14,7 +14,7 @@ import {
 import { KeyboardAvoidingView } from '../../components/3rd-party';
 import userLoginPage from '../../assets/styles/login-system/userLoginPage';
 
-export default ({ navigation }): React.ReactElement => {
+export default ({ navigation }: any): React.ReactElement => {
 
   const [email, setEmail] = React.useState<string>();
   const [password, setPassword] = React.useState<string>();

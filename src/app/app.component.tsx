@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppearanceProvider } from 'react-native-appearance';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { AppNavigator } from './navigation.component';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
@@ -11,10 +12,10 @@ import { default as appTheme } from '../assets/styles/custom-theme.json'; // <--
 const theme = { ...darkTheme, ...appTheme };
 
 export default () => (
-  <React.Fragment>
+  <SafeAreaProvider>
       <IconRegistry icons={[EvaIconsPack, AppIconsPack]}/>
       <ApplicationProvider mapping={mapping} theme={theme}>
           <AppNavigator/>
       </ApplicationProvider>
-  </React.Fragment>
+  </SafeAreaProvider>
 );

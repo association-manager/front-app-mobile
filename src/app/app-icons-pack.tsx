@@ -16,6 +16,7 @@ const IconProviderLess = (source: ImageRequireSource) => ({
       "width": 20,
       "height": 20,
       "marginHorizontal": 8,
+      "marginVertical": 4,
       "tintColor": "#8F9BB3"
     }} source={source}/>
   ),
@@ -33,7 +34,7 @@ export const AppIconsPack = {
     'dashboard-dark': IconProvider(require('../assets/images/icon-dashboard-dark.png')),
     'association-profile': IconProvider(require('../assets/images/association-manager.png')),
     'association-profile-dark': IconProvider(require('../assets/images/association-manager-dark.png')),
-    'projects': IconProvider(require('../assets/images/icon-projects.png')),
+    'projects': IconProviderLess(require('../assets/images/icon-projects.png')),
     'projects-dark': IconProvider(require('../assets/images/icon-projects-dark.png')),
     'tasks-list': IconProvider(require('../assets/images/icon-tasks-list-dark.png')),
     'tasks-list-dark': IconProvider(require('../assets/images/icon-tasks-list-dark.png')),

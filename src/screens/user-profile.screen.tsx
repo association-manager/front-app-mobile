@@ -13,7 +13,8 @@ import { KeyboardAvoidingView } from '../components/3rd-party';
 import { ArrowIosBackIcon, MessageCircleIcon } from '../components/icons';
 import userProfile from '../assets/styles/login-system/userProfile';
 import { SafeAreaView } from 'react-native-safe-area-context';
-({ navigation }: any ): React.ReactElement => {
+
+export const UserProfileScreen = ({ navigation }: any ): React.ReactElement => {
 
 const [phoneNumber, setPhoneNumber] = React.useState<string>();
 const [email, setEmail] = React.useState<string>();

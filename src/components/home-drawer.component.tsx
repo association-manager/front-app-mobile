@@ -19,7 +19,7 @@ export const HomeDrawer = ({ navigation }: any ): DrawerElement => {
     switch (index) {
       case 0: {
         navigation.toggleDrawer();
-        navigation.navigate('Ecran accueil');
+        navigation.navigate('Accueil');
         navigation.setOptions({title: DATA[0].title});
         return;
       }

@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Avatar, Divider, Drawer, DrawerElement, DrawerHeaderElement, DrawerHeaderFooter} from '@ui-kitten/components';
 import { DrawerHeaderFooterElement, Layout, MenuItemType, Text } from '@ui-kitten/components';
 import { DashboardIcon, TaskIcon, PeopleIcon, GridIcon, PowerIcon, PersonIcon} from './icons';
+import auth from '../services/auth-api.service';
 
 const DATA: MenuItemType[] = [
   { title: 'Toutes vos taches', icon: TaskIcon},
@@ -49,6 +50,7 @@ export const HomeDrawer = ({ navigation }: any ): DrawerElement => {
       }
       case 5: {
         navigation.toggleDrawer();
+        auth.logout();
         navigation.navigate('UserLoginPage');
         navigation.setOptions({title: DATA[5].title});
         return;

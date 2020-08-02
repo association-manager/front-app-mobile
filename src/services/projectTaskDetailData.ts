@@ -14,7 +14,7 @@ export class ProjectTaskDetail {
               readonly createdAt: string,
               public   progress: ProjectTaskListItem [],
               readonly author: Profile,
-              readonly comments: Comment[]) {
+              readonly comments: Comment[]) { 
   }
 
   static howToEatHealthy(): ProjectTaskDetail {

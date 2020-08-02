@@ -2,7 +2,6 @@ import React from 'react';
 import {  View } from 'react-native';
 import { Button, Input, Text, Avatar } from '@ui-kitten/components';
 import { ImageOverlay } from '../components/image-overlay.component';
-
 import {
   EyeIcon,
   EyeOffIcon,
@@ -12,18 +11,37 @@ import {
   TwitterIcon,
 } from '../components/icons';
 import { KeyboardAvoidingView } from '../components/3rd-party';
+import Toast from 'react-native-tiny-toast'
 import userLoginPage from '../assets/styles/login-system/userLoginPage';
+import auth from '../services/auth-api.service';
 
 
 export const UserLoginScreen = ({ navigation }: any): React.ReactElement => {
 
-    const [email, setEmail] = React.useState<string>();
-    const [password, setPassword] = React.useState<string>();
+    const [email, setEmail] = React.useState<string>("test17890@test.com");
+    const [password, setPassword] = React.useState<string>("password");
     const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
-  
+
     const onSignInButtonPress = (): void => {
-      
-      navigation && navigation.navigate('HomeNavigator');
+      if (auth.authenticate(email, password)){
+        Toast.showSuccess('Login success')
+        setTimeout(()=>{
+          navigation && navigation.navigate('UserAdsPage');
+        },2000)
+        
+      }else{
+        Toast.show("Echec d'authentification !",{
+          position: Toast.position.CENTER,
+          containerStyle:{
+            backfaceVisibility: "hidden",
+            position: "relative",
+            alignContent: "center",
+            borderRadius: 20
+          },
+          textColor: '#FFF',
+          duration: 1500
+        });
+      }
     };
   
     const onForgotPasswordButtonPress = (): void => {
@@ -54,7 +72,7 @@ export const UserLoginScreen = ({ navigation }: any): React.ReactElement => {
               category='s1'
               status='control'>
               Connectez-vous
-            </Text>
+            </Text> 
           </View>
           <View style={userLoginPage.formContainer}>
             <Input

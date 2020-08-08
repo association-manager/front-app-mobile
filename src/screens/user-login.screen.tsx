@@ -21,8 +21,8 @@ import { useSafeArea } from 'react-native-safe-area-context';
 export const UserLoginScreen = ({ navigation }: any): React.ReactElement => {
 
     const insets = useSafeArea();
-    const [email, setEmail] = React.useState<string>("test17890@test.com");
-    const [password, setPassword] = React.useState<string>("password");
+    const [email, setEmail] = React.useState<string>("");
+    const [password, setPassword] = React.useState<string>("");
     const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
 
     const onSignInButtonPress = (): void => {

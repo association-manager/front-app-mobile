@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppearanceProvider } from 'react-native-appearance';
+//import { AppearanceProvider } from 'react-native-appearance';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { AppNavigator } from './navigation.component';

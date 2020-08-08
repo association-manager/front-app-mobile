@@ -80,6 +80,7 @@ export const HomeDrawer = ({ navigation }: any ): DrawerElement => {
     <React.Fragment>
       <Divider/>
       <DrawerHeaderFooter
+        
         disabled={true}
         description="description"
       />

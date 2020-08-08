@@ -1,5 +1,5 @@
 import api from "./api.service";
-import { AdsItem } from 'src/models/ads-item.model';
+import AdsItem from 'src/models/ads-item.model';
 
 /**
  * 

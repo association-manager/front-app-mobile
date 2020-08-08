@@ -1,5 +1,6 @@
 import React from 'react';
 import {  View } from 'react-native';
+import {USERNAME, PWD} from '@env';
 import { Button, Input, Text, Avatar } from '@ui-kitten/components';
 import { ImageOverlay } from '../components/image-overlay.component';
 import {
@@ -21,13 +22,13 @@ import { useSafeArea } from 'react-native-safe-area-context';
 export const UserLoginScreen = ({ navigation }: any): React.ReactElement => {
 
     const insets = useSafeArea();
-    const [email, setEmail] = React.useState<string>("test17890@test.com");
-    const [password, setPassword] = React.useState<string>("password");
+    const [email, setEmail] = React.useState<string>(USERNAME);
+    const [password, setPassword] = React.useState<string>(PWD);
     const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
 
     const onSignInButtonPress = (): void => {
       if (auth.authenticate(email, password)){
-        Toast.showSuccess('Login success')
+        Toast.showSuccess('Connetion reussie')
         setTimeout(()=>{
           navigation && navigation.navigate('UserAdsPage');
         },2000)

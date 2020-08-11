@@ -5,14 +5,37 @@ import { ImageOverlay } from '../components/image-overlay.component';
 import { EmailIcon } from '../components/icons';
 import { KeyboardAvoidingView } from '../components/3rd-party';
 import userForgotPassword from '../assets/styles/login-system/userForgotPassword';
-
+import forgetPwdApi from '../services/api-forget-pwd.service';
+import Toast from 'react-native-tiny-toast';
 
 export const UserForgotPasswordScreen = ({ navigation }: any): React.ReactElement => {
 
   const [email, setEmail] = React.useState<string>();
 
-  const onResetPasswordButtonPress = (): void => {
-    navigation && navigation.goBack();
+  const onResetPasswordButtonPress = async (): Promise<void> => {
+    email
+    let query = `mutation
+                        {
+                          forgotPassword(
+                            email: "${email}",
+                          
+                          )
+                        }
+                  `;
+    console.log(query);
+    await forgetPwdApi.post('/graphql', {query},{
+      headers: {
+        'Shopping-Cart': 'associationManager'
+      }}
+    ).then((result: any) => {
+      console.log(result.data)
+      Toast.showSuccess(
+         'Message Envoyer\nSi votre email est valide vous receverez un email de réinitialisation',
+         {duration: 4000}
+        )
+      setTimeout(()=>navigation && navigation.goBack(), 5000)
+      
+    })
   };
 
   return (
@@ -35,7 +58,7 @@ export const UserForgotPasswordScreen = ({ navigation }: any): React.ReactElemen
           <Input
             status='control'
             placeholder='Email'
-            icon={EmailIcon}
+            accessoryRight={EmailIcon}
             value={email}
             onChangeText={setEmail}
           />

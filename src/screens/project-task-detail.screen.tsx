@@ -23,7 +23,7 @@ export const ProjectTaskDetailScreen = ({ navigation }: any): React.ReactElement
       insets='top'> */}
       <TopNavigation
         title='Retour'
-        leftControl={renderBackAction()}
+        accessoryLeft={renderBackAction}
       />
       <ContentView/>
     </>

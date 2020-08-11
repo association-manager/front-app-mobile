@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, ActivityIndicator} from 'react-native';
 import {WebView} from 'react-native-webview';
-import adsApi from "../services/ads-api.service";
+import adsApi from "../services/api-ads.service";
 import Toast from 'react-native-tiny-toast';
 import AdsItem, {Ads} from '../models/ads-item.model';
 import { useSafeArea, SafeAreaView } from 'react-native-safe-area-context';

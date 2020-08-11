@@ -37,7 +37,7 @@ export const ProjectTaskCardList = (props: ProjectTaskCardListProps): ListElemen
         <Text style={styles.itemDescription} appearance='hint'>
           {info.item.description}
         </Text>
-        <Button style={styles.dateEndRight} size='tiny' icon={ClockIcon} status='success'>
+        <Button style={styles.dateEndRight} size='tiny' accessoryLeft={ClockIcon} status='success'>
            {"Date de fin : " + info.item.endDate}
         </Button>
       </ImageOverlay>

@@ -36,9 +36,8 @@ const ProjectTasksMenuNavigator = (): React.ReactElement => (
 );
 
 export const ProjectTasksNavigator = (): React.ReactElement => (
-  <Stack.Navigator headerMode="none">
-    <Stack.Screen name='ProjectsTaskMenu' component={ProjectTasksMenuNavigator} 
-      options={({ route }) => ({headerTitle: getHeaderTitle(route)})}/>
+  <Stack.Navigator headerMode="none" screenOptions={({ route }) => ({headerTitle: getHeaderTitle(route)})}>
+    <Stack.Screen name='ProjectsTaskMenu' component={ProjectTasksMenuNavigator} />
     <Stack.Screen name='ProjectTaskDetailScreen' component={ProjectTaskDetailScreen}/>
   </Stack.Navigator>
 );

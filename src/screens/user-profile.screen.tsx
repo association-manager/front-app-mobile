@@ -65,7 +65,7 @@ return (
             style={userProfile.orderInput}
             status='control'
             placeholder='Email'
-            icon={EmailIcon}
+            accessoryRight={EmailIcon}
             value={email}
             defaultValue={'petitbert.nesly@association-manager.fr'}
             onChangeText={setEmail}
@@ -95,7 +95,7 @@ return (
             style={userProfile.orderInput}
             status='control'
             placeholder='Adresse'
-            icon={GlobeIcon}
+            accessoryRight={GlobeIcon}
             value={city}
             defaultValue={'Palaiseau'}
             caption='Ville'
@@ -105,7 +105,7 @@ return (
             style={userProfile.passwordInput}
             status='control'
             placeholder='Mot de passe'
-            icon={passwordVisible ? EyeIcon : EyeOffIcon}
+            accessoryRight={passwordVisible ? EyeIcon : EyeOffIcon}
             value={password}
             defaultValue={'passowrd1'}
             secureTextEntry={!passwordVisible}
@@ -117,7 +117,7 @@ return (
             style={userProfile.passwordInput}
             status='control'
             placeholder='Nouveau mot de passe'
-            icon={passwordVisible ? EyeIcon : EyeOffIcon}
+            accessoryRight={passwordVisible ? EyeIcon : EyeOffIcon}
             value={newPassword}
             // defaultValue={'passowrd2'}
             secureTextEntry={!passwordVisible}
@@ -128,7 +128,7 @@ return (
             style={userProfile.passwordInput}
             status='control'
             placeholder='Confirmation du mot de passe'
-            icon={passwordVisible ? EyeIcon : EyeOffIcon}
+            accessoryRight={passwordVisible ? EyeIcon : EyeOffIcon}
             value={confirmPassword}
             // defaultValue={'passowrd1'}
             secureTextEntry={!passwordVisible}

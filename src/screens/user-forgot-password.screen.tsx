@@ -58,7 +58,7 @@ export const UserForgotPasswordScreen = ({ navigation }: any): React.ReactElemen
           <Input
             status='control'
             placeholder='Email'
-            icon={EmailIcon}
+            accessoryRight={EmailIcon}
             value={email}
             onChangeText={setEmail}
           />

@@ -18,7 +18,8 @@ function authenticate(username: string|undefined, password: string|undefined ) {
                 AsyncStorage.setItem("authToken", token);
                 // On prévient Axios qu'on a maintenant un header par défaut sur toutes nos futures requetes HTTP
                 setAxiosToken(token);
-            });
+                return true
+            }).catch(()=> false);
     }else{
         return false
     }

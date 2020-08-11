@@ -47,7 +47,7 @@ export const AssociationCardList = (props: AssociationCardListProps): ListElemen
         onPress={onAssociationProjectButtonPress}>
           {"Projets de cette association"}
         </Button>
-        <Button style={styles.moreInfoRiht} size='tiny' icon={InfoIcon} status='success'
+        <Button style={styles.moreInfoRiht} size='tiny' accessoryLeft={InfoIcon} status='success'
         onPress={onAssociationMoreDetailsButtonPress}>
            {"En savoir plus"}
         </Button>

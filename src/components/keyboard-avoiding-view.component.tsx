@@ -42,6 +42,7 @@ const translateY = new Animated.Value(0);
 export const KeyboardAvoidingView = (props: KeyboardAvoidingViewProps): React.ReactElement => {
 
   const { style, offset, autoDismiss, ...viewProps } = { ...defaultProps, ...props };
+  //React.useNativeDriver=true;
 
   React.useEffect(() => {
     const showEventSubscription: EmitterSubscription = Keyboard.addListener(
@@ -73,6 +74,7 @@ export const KeyboardAvoidingView = (props: KeyboardAvoidingViewProps): React.Re
       toValue: params.offsetValue,
       duration: animationDuration,
       easing: Easing.linear,
+      useNativeDriver: true,
     });
   };
 

@@ -1,64 +1,22 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Avatar, Divider, Drawer, DrawerElement, DrawerHeaderElement, DrawerHeaderFooter} from '@ui-kitten/components';
-import { DrawerHeaderFooterElement, Layout, MenuItemType, Text } from '@ui-kitten/components';
+import { Avatar, Divider, Drawer, DrawerElement, DrawerItem, IndexPath, DrawerItemProps} from '@ui-kitten/components';
+import { Layout, Text} from '@ui-kitten/components';
 import { DashboardIcon, TaskIcon, PeopleIcon, GridIcon, PowerIcon, PersonIcon} from './icons';
 import auth from '../services/auth-api.service';
 
-const DATA: MenuItemType[] = [
-  { title: 'Toutes vos taches', icon: TaskIcon},
-  { title: 'Liste des projets', icon: DashboardIcon},
-  { title: 'Liste des associations', icon: PeopleIcon},
-  { title: 'Tableau de bord', icon: GridIcon},
-  { title: 'Mon profil', icon: PersonIcon},
-  { title: 'Déconnexion', icon: PowerIcon},
+const DATA: DrawerItemProps[] = [
+  { title: "Toutes vos taches", accessoryLeft: TaskIcon},
+  { title: 'Liste des projets', accessoryLeft: DashboardIcon},
+  { title: 'Liste des associations', accessoryLeft: PeopleIcon},
+  { title: 'Tableau de bord', accessoryLeft: GridIcon},
+  { title: 'Mon profil', accessoryLeft: PersonIcon},
+  { title: 'Déconnexion', accessoryLeft: PowerIcon},
 ];
 
-export const HomeDrawer = ({ navigation }: any ): DrawerElement => {
+export const HomeDrawer = ({ navigation, state }: any ): DrawerElement => {
 
-  const onItemSelect = (index: number): void => {
-    switch (index) {
-      case 0: {
-        navigation.toggleDrawer();
-        navigation.navigate('Accueil');
-        navigation.setOptions({title: DATA[0].title});
-        return;
-      }
-      case 1: {
-        navigation.toggleDrawer();
-        navigation.navigate('Liste des projets');
-        navigation.setOptions({title: DATA[1].title});
-        return;
-      }
-      case 2: {
-        navigation.toggleDrawer();
-        navigation.navigate('Liste des associations');
-        navigation.setOptions({title: DATA[2].title});
-        return;
-      }
-      case 3: {
-        navigation.toggleDrawer();
-        navigation.navigate('Tableau de bord');
-        navigation.setOptions({title: DATA[3].title});
-        return;
-      }
-      case 4: {
-        navigation.toggleDrawer();
-        navigation.navigate('Mon profil');
-        navigation.setOptions({title: DATA[4].title});
-        return;
-      }
-      case 5: {
-        navigation.toggleDrawer();
-        auth.logout();
-        navigation.navigate('UserLoginPage');
-        navigation.setOptions({title: DATA[5].title});
-        return;
-      }
-    }
-  };
-
-  const renderHeader = (): DrawerHeaderElement => (
+  const renderHeader = (): DrawerElement => (
     <Layout
       style={styles.header}
       level='2'>
@@ -76,25 +34,26 @@ export const HomeDrawer = ({ navigation }: any ): DrawerElement => {
     </Layout>
   );
 
-  const renderFooter = (): DrawerHeaderFooterElement => (
-    <React.Fragment>
-      <Divider/>
-      <DrawerHeaderFooter
-        
-        disabled={true}
-        description="description"
-      />
-    </React.Fragment>
+  const renderFooter = (): DrawerElement => (
+      <Layout>
+        <Text
+          style={styles.profileName}
+          category='c2'>
+          description
+        </Text>
+      </Layout>
   );
 
   return (
     <>
       <Drawer
+        selectedIndex={new IndexPath(state.index)}
         header={renderHeader}
         footer={renderFooter}
-        data={DATA}
-        onSelect={onItemSelect}
-      />
+        onSelect={index => navigation.navigate(state.routeNames[index.row])}
+        children={DATA.map((drawerItemProps ): React.ReactElement =><DrawerItem {...drawerItemProps}/>)}
+      /> 
+
     </>
   );
 };

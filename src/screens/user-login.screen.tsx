@@ -1,33 +1,29 @@
 import React from 'react';
-import {  View } from 'react-native';
-import {USERNAME, PWD} from '@env';
-import { Button, Input, Text, Avatar } from '@ui-kitten/components';
+import {  View,TouchableWithoutFeedback } from 'react-native';
+import {USERNAME, UPWD} from '@env';
+import { Button, Input, Text, Avatar, IconProps, Icon} from '@ui-kitten/components';
 import { ImageOverlay } from '../components/image-overlay.component';
-import {
-  EyeIcon,
-  EyeOffIcon,
-  FacebookIcon,
-  GoogleIcon,
-  PersonIcon,
-  TwitterIcon,
-} from '../components/icons';
+import { 
+  FacebookIcon,GoogleIcon, PersonIcon, TwitterIcon,
+  } from '../components/icons';
 import { KeyboardAvoidingView } from '../components/3rd-party';
 import Toast from 'react-native-tiny-toast'
 import styles from '../assets/styles/login-system/userLoginPage';
 import auth from '../services/auth-api.service';
-import { useSafeArea } from 'react-native-safe-area-context';
+import { useSafeArea } from 'react-native-safe-area-context'
 
 
 
-export const UserLoginScreen = ({ navigation }: any): React.ReactElement => {
+export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
 
     const insets = useSafeArea();
     const [email, setEmail] = React.useState<string>(USERNAME);
-    const [password, setPassword] = React.useState<string>(PWD);
+    const [password, setPassword] = React.useState<string>(UPWD);
     const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
-
-    const onSignInButtonPress = (): void => {
-      if (auth.authenticate(email, password)){
+    const isFocused = navigation.isFocused();
+    if (isFocused) auth.logout()
+    const onSignInButtonPress = async (): Promise<void> => {
+      if (await auth.authenticate(email, password)){
         Toast.showSuccess('Connetion reussie')
         setTimeout(()=>{
           navigation && navigation.navigate('UserAdsPage');
@@ -55,6 +51,12 @@ export const UserLoginScreen = ({ navigation }: any): React.ReactElement => {
     const onPasswordIconPress = (): void => {
       setPasswordVisible(!passwordVisible);
     };
+
+    const renderEyeIcon = (props:IconProps)=>
+      <TouchableWithoutFeedback onPress={onPasswordIconPress}>
+          <Icon {...props} name={passwordVisible ? 'eye-off' : 'eye'}/>
+      </TouchableWithoutFeedback>
+  
   
     return (
       <KeyboardAvoidingView>
@@ -82,7 +84,7 @@ export const UserLoginScreen = ({ navigation }: any): React.ReactElement => {
             <Input
               status='control'
               placeholder='Email'
-              icon={PersonIcon}
+              accessoryRight={PersonIcon}
               value={email}
               onChangeText={setEmail}
             />
@@ -90,11 +92,10 @@ export const UserLoginScreen = ({ navigation }: any): React.ReactElement => {
               style={styles.passwordInput}
               status='control'
               placeholder='Mot de passe'
-              icon={passwordVisible ? EyeIcon : EyeOffIcon}
+              accessoryRight={renderEyeIcon}
               value={password}
               secureTextEntry={!passwordVisible}
               onChangeText={setPassword}
-              onIconPress={onPasswordIconPress}
             />
             <View style={styles.forgotPasswordContainer}>
               <Button
@@ -123,19 +124,19 @@ export const UserLoginScreen = ({ navigation }: any): React.ReactElement => {
                 appearance='ghost'
                 status='control'
                 size='giant'
-                icon={GoogleIcon}
+                accessoryLeft={GoogleIcon}
               />
               <Button
                 appearance='ghost'
                 status='control'
                 size='giant'
-                icon={FacebookIcon}
+                accessoryLeft={FacebookIcon}
               />
               <Button
                 appearance='ghost'
                 status='control'
                 size='giant'
-                icon={TwitterIcon}
+                accessoryLeft={TwitterIcon}
               />
             </View>
           </View>

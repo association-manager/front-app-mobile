@@ -23,7 +23,7 @@ export const AssociationProfileScreen = ({ navigation }: any): React.ReactElemen
       insets='top'> */}
       <TopNavigation
         title='Retour'
-        leftControl={renderBackAction()}
+        accessoryLeft={renderBackAction}
       />
       <ContentView/>
     </>

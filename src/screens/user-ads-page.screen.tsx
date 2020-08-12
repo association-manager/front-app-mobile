@@ -4,17 +4,17 @@ import {WebView} from 'react-native-webview';
 import adsApi from "../services/api-ads.service";
 import Toast from 'react-native-tiny-toast';
 import AdsItem, {Ads} from '../models/ads-item.model';
-import { useSafeArea, SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeArea } from 'react-native-safe-area-context';
 
 
-const ADS_URL = "https://advertisement-manager.s3.eu-west-3.amazonaws.com/advertisement_"
+const ASSO_URL = " https://association-manager.go.yj.fr/"
+const ADS_URL = "https://association-manager.go.yj.fr/annonces/"
 
 export const UserAdsPageScreen = ({ navigation }: any): React.ReactElement => {
 
     const insets = useSafeArea();
     const [iFrame, setIFrame]= React.useState<string>("")
     const [adsTimer, setAdsTimer]=React.useState<number>(10000)
-    const [webViewButton, setWebViewButton]= React.useState<string>("")
     const toastParam: Object = {
         position: Toast.position.CENTER,
         containerStyle:{
@@ -35,7 +35,7 @@ export const UserAdsPageScreen = ({ navigation }: any): React.ReactElement => {
                 const apiAdsList: AdsItem[]|null = value
                 const ads = apiAdsList[i]
                 const isVideo = (adsF: Ads) => adsF.video != null
-                const findIndexPicture = ads.advertisementFiles.findIndex((adsF: Ads) => adsF.pictureSize === "300x600")
+                const findIndexPicture = ads.advertisementFiles.findIndex((adsF: Ads) => adsF.pictureSize === "300x250")
                 const findIndexVideo = ads.advertisementFiles.findIndex(isVideo)
                 if(findIndexPicture == -1 && findIndexVideo == -1) 
                     return (
@@ -47,14 +47,13 @@ export const UserAdsPageScreen = ({ navigation }: any): React.ReactElement => {
                         )
                 else {
                     if(findIndexPicture !== -1){
-                        annonce = ADS_URL + "picture/" + ads.advertisementFiles[findIndexPicture].picture
+                        annonce = ADS_URL + ads.iframeLink
                     }else{
-                        annonce = ADS_URL + "video/" + ads.advertisementFiles[findIndexVideo].video
+                        annonce = ADS_URL + ads.iframeLink
                         setAdsTimer(30*1000)
                     }
                     const iFrameProps = findIndexPicture !== -1? '' : ''                  
-                    setIFrame(`<iframe width="75%" height="75%" src=${annonce} ${iFrameProps} "/>`);
-                    setWebViewButton(`<button onclick="href=${ads.association.website}">Allez vers le site web</button>`);
+                    setIFrame(annonce);
                     setTimeout(() => {
                         navigation && navigation.navigate('HomeNavigator');
                     },adsTimer)
@@ -65,40 +64,11 @@ export const UserAdsPageScreen = ({ navigation }: any): React.ReactElement => {
     return (
         <WebView
             style={styles.WebViewStyle && {paddingTop:insets.top, paddingBottom:insets.bottom}}
-            // originWhitelist={['*']}
+            originWhitelist={['*']}
             mediaPlaybackRequiresUserAction={false}
-            allowsInlineMediaPlayback
-            startInLoadingState
+            allowsInlineMediaPlayback={true}
             renderLoading={()=><ActivityIndicator/>}
-            source={{ html:
-                `<html>
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="initial-scale=1.0">
-                        <style>
-                            html,
-                            body,
-                            div,
-                            iframe {
-                                margin: 0px;
-                                padding: 0px;
-                                height: 100%;
-                                border: none;
-                                display: block;
-                                width: 100%;
-                                border: none;
-                                overflow: hidden;
-                                padding-bottom: 100;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <div>
-                            ${iFrame}
-                        </div>
-                    </body>
-                </html>`
-                }}
+            source={{ uri: `${iFrame}` }}
         >
         </WebView>
     )

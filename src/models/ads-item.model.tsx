@@ -10,13 +10,16 @@ export default interface AdsItem {
     advertisementFiles: Ads[];
     audience:string;
     appWebMobile:string|null;
+    priority:number|null;
     association: AdsAsso;
+    iframeLink:string;
 }
 export interface Ads {
     id:number;
     picture: string|null;
     video: string|null;
     pictureSize:string;
+    logo:ImageBitmapSource;
 }
 
 interface AdsAsso {

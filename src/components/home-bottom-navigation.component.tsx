@@ -1,5 +1,5 @@
 import React from 'react';
-import { BottomNavigationTab, Divider } from '@ui-kitten/components';
+import { BottomNavigationTab, Divider, Text, TextProps } from '@ui-kitten/components';
 import { BrandBottomNavigation } from './brand-bottom-navigation.component';
 import { ProjectsIcon, LayoutIcon, StarOutlineIcon } from './icons';
 import { useSafeArea } from 'react-native-safe-area-context';
@@ -22,18 +22,15 @@ export const HomeBottomNavigation = (props: any): React.ReactElement => {
         selectedIndex={props.state.index}
         onSelect={onSelect}>
         <BottomNavigationTab
-          title='Toutes vos taches'
-          titleStyle={{fontSize: 10}}
+          title={(evaProps) => <Text {...evaProps} style={[evaProps.style, {fontSize: 10}]}>Toutes vos taches</Text>}
           icon={LayoutIcon}
         />
         <BottomNavigationTab
-          title='Taches par association(s)'
-          titleStyle={{fontSize: 10}}
+          title={(evaProps) => <Text {...evaProps} style={[evaProps.style, {fontSize: 10}]}>Taches par association(s)</Text>}
           icon={StarOutlineIcon}
         />
         <BottomNavigationTab
-          title='Taches par projet(s)'
-          titleStyle={{fontSize: 10}}
+          title={(evaProps) => <Text {...evaProps} style={[evaProps.style, {fontSize: 10}]}>Taches par projet(s)</Text>}
           icon={ProjectsIcon}
         />
       </BrandBottomNavigation>

@@ -22,13 +22,11 @@ export const UserForgotPasswordScreen = ({ navigation }: any): React.ReactElemen
                           )
                         }
                   `;
-    console.log(query);
     await forgetPwdApi.post('/graphql', {query},{
       headers: {
         'Shopping-Cart': 'associationManager'
       }}
     ).then((result: any) => {
-      console.log(result.data)
       Toast.showSuccess(
          'Message Envoyer\nSi votre email est valide vous receverez un email de réinitialisation',
          {duration: 4000}

@@ -5,11 +5,11 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { BottomTabNavigationOptions, createBottomTabNavigator, }
   from '@react-navigation/bottom-tabs';
 import { ProjectTasksNavigator } from './project-tasks.navigator';
-import { Button, TopNavigationAction } from '@ui-kitten/components';
+import { TopNavigationAction } from '@ui-kitten/components';
 import { ProjectsScreen } from '../screens/projects.screen';
 import { HomeDrawer } from '../components/home-drawer.component';
 import { HomeBottomNavigation } from '../components/home-bottom-navigation.component';
-import { MenuIcon, ArrowIosBackIcon } from '../components/icons';
+import { MenuIcon } from '../components/icons';
 import { DrawerActions } from '@react-navigation/native';
 import { UserProfileScreen } from '../screens/user-profile.screen';
 import { ProjectTasksAssoNavigator } from './project-tasks-asso.navigator';
@@ -54,7 +54,8 @@ const getHeaderTitle = (route: RouteProp<any, any>) => {
       return 'Tâches projet';
     case "Profile de l'association":
       return "Profile de l'association";
-
+    case "Toutes vos taches":
+      return "toto";
   }
 }
 
@@ -82,22 +83,12 @@ const HomeDrawerNavigator = () => (
     drawerContent={(props: any) => <HomeDrawer {...props} />}>
     <Drawer.Screen name='Accueil' component={HomeTabsNavigator} />
     <Drawer.Screen name='Liste des projets' component={ProjectsScreen} />
-    <Drawer.Screen name='Liste des associations' component={AssociationsListScreen}
-      options={{ title: 'Liste des associations' }} />
+    <Drawer.Screen name='Liste des associations' component={AssociationsListScreen} />
     <Drawer.Screen name='Tableau de bord' component={DashboardScreen} />
     <Drawer.Screen name='Mon profil' component={UserProfileScreen} />
-    <Stack.Screen name='UserLoginPage' component={UserLoginScreen} />
-    <Stack.Screen name='Tâches projet' component={ProjectTasksNavigator}
-      options={({ navigation }) => ({
-        headerLeft: () =>
-          <Button style={{ backgroundColor: 'transparent', borderColor: 'transparent' }}
-            accessoryLeft={ArrowIosBackIcon}
-            onPress={() => navigation.goBack()} />
-      })}
-    />
-    <Drawer.Screen name="Profile de l'association" component={AssociationProfileScreen}
-      options={{ title: "Profile de l'association" }} />
-
+    <Drawer.Screen name='UserLoginPage' component={UserLoginScreen} />
+    <Drawer.Screen name='Tâches projet' component={ProjectTasksNavigator}/>
+    <Drawer.Screen name="Profile de l'association" component={AssociationProfileScreen}/>
   </Drawer.Navigator>
 )
 
@@ -105,10 +96,9 @@ const HomeTabsNavigator = (): React.ReactElement => (
   <BottomTab.Navigator
     screenOptions={TabBarVisibleOnRootScreenOptions}
     tabBar={props => <HomeBottomNavigation {...props} />}>
-    <BottomTab.Screen name='Toutes vos taches' component={ProjectTasksNavigator} />
-    <BottomTab.Screen name='Taches par association(s)' component={ProjectTasksAssoNavigator} />
-    <BottomTab.Screen name='Taches par projet(s)' component={ProjectTasksProNavigator} />
-    {/*     <BottomTab.Screen name='Accueil latérale' component={HomeDrawerNavigator}/> */}
+    <BottomTab.Screen name='Toutes vos taches' component={ProjectTasksNavigator}/>
+    <BottomTab.Screen name='Taches par association(s)' component={ProjectTasksAssoNavigator}/>
+    <BottomTab.Screen name='Taches par projet(s)' component={ProjectTasksProNavigator}/>
   </BottomTab.Navigator>
 );
 

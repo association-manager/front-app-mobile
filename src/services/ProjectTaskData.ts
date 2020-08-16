@@ -1,3 +1,4 @@
+import Api from './api.service'
 import { ProjectTaskItem} from '../models/project-task-item.model';
 import { ProjectTaskListItem } from '../models/project-task-list-item.models';
 import {Profile, Comment} from './projectTaskDetailData'; 
@@ -7,6 +8,10 @@ import moment from 'moment';
 export interface ProjectTaskData extends ProjectTaskItem {
   route: string;
 }
+
+Api.get('',{
+  
+})
 
 export const data: ProjectTaskData[] = [
 { "id" : 1,

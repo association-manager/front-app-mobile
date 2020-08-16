@@ -1,9 +1,11 @@
 import React from 'react';
+import { Button } from '@ui-kitten/components';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { ProjectTasksTabBar } from '../components/project-tasks-tab-bar.component';
 import { ProjectTasksGridScreen } from '../screens/project-tasks-grid.screen';
 import { ProjectTaskDetailScreen } from '../screens/project-task-detail.screen';
+import { ArrowIosBackIcon } from '../components/icons';
 
 const TopTab = createMaterialTopTabNavigator();
 const Stack = createStackNavigator();
@@ -18,7 +20,7 @@ const getHeaderTitle = (route: any) => {
       route.params?.screen || 'Tâches projet';
 
   switch (routeName) {
-    case 'À faire':
+    case 'ProjectTaskDetailScreen':
       return 'Tâches projet à faire';
     case 'En cours':
       return 'Tâches projet en cours';
@@ -35,9 +37,20 @@ const ProjectTasksMenuNavigator = (): React.ReactElement => (
 </TopTab.Navigator>
 );
 
-export const ProjectTasksNavigator = (): React.ReactElement => (
+export const ProjectTasksNavigator = ({ navigation}:any): React.ReactElement => {
+  React.useEffect(() => {
+    navigation.setOptions({ 
+      headerLeft: () =>
+        <Button style={{ backgroundColor: 'transparent', borderColor: 'transparent' }}
+          accessoryLeft={ArrowIosBackIcon}
+          onPress={() => navigation.goBack()} />
+    });
+  }, [navigation]);
+
+  return(
+
   <Stack.Navigator headerMode="none" screenOptions={({ route }) => ({headerTitle: getHeaderTitle(route)})}>
     <Stack.Screen name='ProjectsTaskMenu' component={ProjectTasksMenuNavigator} />
     <Stack.Screen name='ProjectTaskDetailScreen' component={ProjectTaskDetailScreen}/>
   </Stack.Navigator>
-);
+)};

@@ -15,19 +15,21 @@ const keyboardOffset = (height: number): number => Platform.select({
   ios: height,
 });
 
-export default (): React.ReactElement => {
+export default (props: any): React.ReactElement => {
 
   const styles = useStyleSheet(themedStyles);
   const [inputComment, setInputComment] = React.useState<string>();
   const [selectedProgressIndex, setSelectedProgressIndex] = React.useState<number>();
   
+  React.useEffect(()=>{
+    props.retrieve(props.id);
+  })
+  const data : ProjectTaskDetail = props.retrieved;
+
   const renderProgressItem = (progress: ProjectTaskListItem, index: number): React.ReactElement => (
-    <Radio
-      key={index}
-      style={styles.colorRadio}
-      textStyle={{ color: progress.color }}
-      text={progress.description.toUpperCase()}
-    />
+    <Radio key={index}>
+       {()=><Text style={{color: progress.color }}>{progress.description.toUpperCase()}</Text>}
+    </Radio>
   );
 
   const renderHeader = (): React.ReactElement => (
@@ -73,8 +75,7 @@ export default (): React.ReactElement => {
       </View>
       <Input
         style={styles.commentInput}
-        labelStyle={styles.commentInputLabel}
-        label='Comments'
+        label={()=> <Text style={[styles.commentInputLabel]}>Comments</Text>}
         placeholder='Write your comment'
         value={inputComment}
         onChangeText={setInputComment}

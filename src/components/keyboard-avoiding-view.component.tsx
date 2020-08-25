@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 
 export interface KeyboardAvoidingViewProps extends ViewProps {
-  offset?: (height: number) => number;
+  offset: (height: number) => number;
   autoDismiss?: boolean;
   children: React.ReactNode;
 }

@@ -29,8 +29,6 @@ const BottomTab = createBottomTabNavigator();
  */
 const ROOT_ROUTES: string[] = ['ProjectsTaskMenu'];
 
-
-
 const getHeaderTitle = (route: RouteProp<any, any>) => {
   // If the focused route is not found, we need to assume it's the initial screen
   // This can happen during if there hasn't been any navigation inside the screen
@@ -101,7 +99,6 @@ const HomeTabsNavigator = (): React.ReactElement => (
     <BottomTab.Screen name='Taches par projet(s)' component={ProjectTasksProNavigator}/>
   </BottomTab.Navigator>
 );
-
 
 export const HomeNavigator = () => (
   <Stack.Navigator headerMode="float" initialRouteName="HomeDrawerNavigator"

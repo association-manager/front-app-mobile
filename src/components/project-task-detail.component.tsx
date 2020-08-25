@@ -21,10 +21,10 @@ export default (props: any): React.ReactElement => {
   const [inputComment, setInputComment] = React.useState<string>();
   const [selectedProgressIndex, setSelectedProgressIndex] = React.useState<number>();
   
-  React.useEffect(()=>{
+ /*  React.useEffect(()=>{
     props.retrieve(props.id);
   })
-  const data : ProjectTaskDetail = props.retrieved;
+  const data : ProjectTaskDetail = props.retrieved; */
 
   const renderProgressItem = (progress: ProjectTaskListItem, index: number): React.ReactElement => (
     <Radio key={index}>

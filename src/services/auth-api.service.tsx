@@ -7,7 +7,7 @@ import api from "./api.service";
  * @param username string
  * @param password string
  */
-function authenticate(username: string|undefined, password: string|undefined ) {
+const authenticate = (username: string|undefined, password: string|undefined ): Promise<boolean> | boolean  => {
     if(username && password) {
         return api
             .post("login_check", {username, password})
@@ -29,14 +29,14 @@ function authenticate(username: string|undefined, password: string|undefined ) {
  * Positionne le token JWT sur Axios
  * @param {string} token Le token JWT
  */
-function setAxiosToken(token: string) {
+const setAxiosToken = (token: string): void => {
     api.defaults.headers["Authorization"] = "Bearer " + token;
 }
 
 /**
  * Mise en place lors du chargement de l'application
  */
-function setup() {
+const setup = (): void  => {
     // 1. Voir si on a un token ?
     AsyncStorage.getItem("authToken")
         .then(token => {
@@ -50,7 +50,7 @@ function setup() {
         })
 }
 
-function isAuthenticated() {
+const isAuthenticated = (): boolean =>{
     let result = false
     // 1. Voir si on a un token ?
     AsyncStorage.getItem("authToken")
@@ -65,8 +65,19 @@ function isAuthenticated() {
         })
     return result;
 }
-
-function logout () {
+const getUserId = (): any =>{
+    AsyncStorage.getItem("authToken")
+        .then(token => {
+            // 2. Si le token est encore valide
+            if (token) {
+                const { exp: expiration, iss: id } = jwt.decode(token);
+                if (expiration * 1000 > new Date().getTime()) {
+                    return id;
+                }
+            }
+        })
+}
+const logout = (): void => {
     AsyncStorage.removeItem("authToken");
     delete api.defaults.headers["Authorization"];
 }
@@ -74,5 +85,6 @@ export default {
     authenticate,
     setup,
     isAuthenticated,
+    getUserId,
     logout,
 };

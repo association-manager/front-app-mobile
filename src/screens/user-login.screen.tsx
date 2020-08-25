@@ -21,11 +21,18 @@ export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
     const [password, setPassword] = React.useState<string>(UPWD);
     const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
     const isFocused = navigation.isFocused();
-    if (isFocused) auth.logout()
+
+    React.useEffect(() => {
+      if (isFocused) auth.logout()
+    }, [isFocused])
+    
+
     const onSignInButtonPress = async (): Promise<void> => {
       if (await auth.authenticate(email, password)){
-        Toast.showSuccess('Connetion reussie')
+        const id = auth.getUserId()
+        Toast.showSuccess('Connetion reussie' + id)
         setTimeout(()=>{
+          
           navigation && navigation.navigate('UserAdsPage');
         },2000)
         

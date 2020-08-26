@@ -55,6 +55,10 @@ target 'frontAppMobile' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
 
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
+  pod 'react-native-pure-jwt', :path => '../node_modules/react-native-pure-jwt'
+
   target 'frontAppMobileTests' do
     inherit! :complete
     # Pods for testing

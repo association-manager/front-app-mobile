@@ -58,7 +58,6 @@ const getHeaderTitle = (route: RouteProp<any, any>) => {
 }
 
 const isOneOfRootRoutes = (currentRoute: RouteProp<any, any>): boolean => {
-  console.log(currentRoute.name)
   return ROOT_ROUTES.find(route => currentRoute.name === route) !== undefined;
 };
 

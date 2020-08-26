@@ -1,5 +1,5 @@
-import {AsyncStorage} from 'react-native';
-import jwt from 'react-native-pure-jwt';
+import AsyncStorage from '@react-native-community/async-storage';
+import JwtDecode from 'jwt-decode';
 import api from "./api.service";
 
 /**
@@ -13,9 +13,9 @@ const authenticate = (username: string|undefined, password: string|undefined ): 
             .post("login_check", {username, password})
             .then(response => response.data.token)
             .then(token => {
-
-                // Je stocké le token dans mon localStorage
-                AsyncStorage.setItem("authToken", token);
+             // Je stocké le token dans mon localStorage
+                const {username: email}= JwtDecode(token)
+                AsyncStorage.multiSet([["authToken", token],["email" , email]]);
                 // On prévient Axios qu'on a maintenant un header par défaut sur toutes nos futures requetes HTTP
                 setAxiosToken(token);
                 return true
@@ -41,12 +41,7 @@ const setup = (): void  => {
     AsyncStorage.getItem("authToken")
         .then(token => {
             // 2. Si le token est encore valide
-            if (token) {
-                const { exp: expiration } = jwt.decode(token);
-                if (expiration * 1000 > new Date().getTime()) {
-                    setAxiosToken(token);
-                }
-            }
+            if(token && isAuthenticated()) setAxiosToken(token)       
         })
 }
 
@@ -57,34 +52,27 @@ const isAuthenticated = (): boolean =>{
         .then(token => {
             // 2. Si le token est encore valide
             if (token) {
-                const { exp: expiration } = jwt.decode(token);
-                if (expiration * 1000 > new Date().getTime()) {
+                const {exp: expiration} =JwtDecode(token)
+                if (expiration * 1000 > new Date().getTime())
                     result = true;
-                }
             }
         })
     return result;
 }
-const getUserId = (): any =>{
-    AsyncStorage.getItem("authToken")
-        .then(token => {
-            // 2. Si le token est encore valide
-            if (token) {
-                const { exp: expiration, iss: id } = jwt.decode(token);
-                if (expiration * 1000 > new Date().getTime()) {
-                    return id;
-                }
-            }
-        })
+const getUserEmail = (): Promise<string|undefined> =>{
+    return AsyncStorage.getItem("email")
+        .then(email => {if(isAuthenticated()&&email) return email})
 }
+
 const logout = (): void => {
     AsyncStorage.removeItem("authToken");
     delete api.defaults.headers["Authorization"];
 }
+
 export default {
     authenticate,
     setup,
     isAuthenticated,
-    getUserId,
+    getUserEmail,
     logout,
 };

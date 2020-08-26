@@ -3,7 +3,6 @@ import { StyleSheet, View } from 'react-native';
 import { Avatar, Divider, Drawer, DrawerElement, DrawerItem, IndexPath, DrawerItemProps} from '@ui-kitten/components';
 import { Layout, Text} from '@ui-kitten/components';
 import { DashboardIcon, TaskIcon, PeopleIcon, GridIcon, PowerIcon, PersonIcon} from './icons';
-import auth from '../services/auth-api.service';
 
 const DATA: DrawerItemProps[] = [
   { title: "Toutes vos taches", accessoryLeft: TaskIcon},

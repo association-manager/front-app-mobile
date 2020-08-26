@@ -1,5 +1,5 @@
 import React from 'react';
-import {  View,TouchableWithoutFeedback } from 'react-native';
+import {  View, TouchableWithoutFeedback } from 'react-native';
 import {USERNAME, UPWD} from '@env';
 import { Button, Input, Text, Avatar, IconProps, Icon} from '@ui-kitten/components';
 import { ImageOverlay } from '../components/image-overlay.component';
@@ -9,7 +9,7 @@ import {
 import { KeyboardAvoidingView } from '../components/3rd-party';
 import Toast from 'react-native-tiny-toast'
 import styles from '../assets/styles/login-system/userLoginPage';
-import auth from '../services/auth-api.service';
+import auth from '../services/auth-api';
 import { useSafeArea } from 'react-native-safe-area-context'
 
 
@@ -21,21 +21,20 @@ export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
     const [password, setPassword] = React.useState<string>(UPWD);
     const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
     const isFocused = navigation.isFocused();
+    const [id, setId] = React.useState<string>();
 
     React.useEffect(() => {
       if (isFocused) auth.logout()
-    }, [isFocused])
+    }, [isFocused===true])
     
 
-    const onSignInButtonPress = async (): Promise<void> => {
-      if (await auth.authenticate(email, password)){
-        const id = auth.getUserId()
-        Toast.showSuccess('Connetion reussie' + id)
+    const onSignInButtonPress = (): void => {
+      if (auth.authenticate(email, password)){
+        Toast.showSuccess('Connection réussie')
         setTimeout(()=>{
-          
-          navigation && navigation.navigate('UserAdsPage');
+          auth.getUserEmail().then(email => setId(email))
+          navigation && navigation.navigate('UserAdsPage', {id});
         },2000)
-        
       }else{
         Toast.show("Echec d'authentification !",{
           position: Toast.position.CENTER,

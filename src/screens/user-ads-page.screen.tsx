@@ -37,7 +37,7 @@ export const UserAdsPageScreen = ({ navigation }: any): React.ReactElement => {
                 const isVideo = (adsF: Ads) => adsF.video != null
                 const findIndexPicture = ads.advertisementFiles.findIndex((adsF: Ads) => adsF.pictureSize === "300x250")
                 const findIndexVideo = ads.advertisementFiles.findIndex(isVideo)
-                if(findIndexPicture == -1 && findIndexVideo == -1) 
+                if(findIndexPicture === -1 && findIndexVideo === -1) 
                     return (
                         Toast.show("Annonce(s) indisponible(s)",toastParam),
                         setTimeout(()=> {

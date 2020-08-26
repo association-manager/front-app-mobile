@@ -33,7 +33,7 @@ export function retrieve(id) {
         dispatch(loading(false));
         dispatch(success(retrieved));
 
-        if (hubURL) dispatch(mercureSubscribe(hubURL, retrieved['@id']));
+        if (hubURL) dispatch(mercureSubscribe(hubURL, retrieved['email']));
       })
       .catch(e => {
         dispatch(loading(false));

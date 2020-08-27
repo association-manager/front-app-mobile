@@ -63,11 +63,10 @@ export const UserAdsPageScreen = ({ navigation }: any): React.ReactElement => {
     }, [])
     return (
         <WebView
-            style={styles.WebViewStyle && {paddingTop:insets.top, paddingBottom:insets.bottom}}
+/*             style={styles.WebViewStyle && {paddingTop:insets.top, paddingBottom:insets.bottom}}
             originWhitelist={['*']}
             mediaPlaybackRequiresUserAction={false}
-            allowsInlineMediaPlayback={true}
-            renderLoading={()=><ActivityIndicator/>}
+            allowsInlineMediaPlayback={true} */
             source={{ uri: `${iFrame}` }}
         >
         </WebView>

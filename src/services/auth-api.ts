@@ -59,10 +59,6 @@ const isAuthenticated = (): boolean =>{
         })
     return result;
 }
-const getUserEmail = (): Promise<string|undefined> =>{
-    return AsyncStorage.getItem("email")
-        .then(email => {if(isAuthenticated()&&email) return email})
-}
 
 const logout = (): void => {
     AsyncStorage.removeItem("authToken");
@@ -73,6 +69,5 @@ export default {
     authenticate,
     setup,
     isAuthenticated,
-    getUserEmail,
     logout,
 };

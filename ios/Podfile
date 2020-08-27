@@ -59,6 +59,8 @@ target 'frontAppMobile' do
 
   pod 'react-native-pure-jwt', :path => '../node_modules/react-native-pure-jwt'
 
+  pod 'react-native-fbsdk', :path => '../node_modules/react-native-fbsdk'
+
   target 'frontAppMobileTests' do
     inherit! :complete
     # Pods for testing

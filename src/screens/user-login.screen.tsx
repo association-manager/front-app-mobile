@@ -11,7 +11,8 @@ import Toast from 'react-native-tiny-toast'
 import styles from '../assets/styles/login-system/userLoginPage';
 import auth from '../services/auth-api';
 import { useSafeArea } from 'react-native-safe-area-context'
-
+import AsyncStorage from '@react-native-community/async-storage';
+import {facebookService} from '../services/fbk-login.service';
 
 
 export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
@@ -22,6 +23,7 @@ export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
     const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
     const isFocused = navigation.isFocused();
     const [id, setId] = React.useState<string>();
+    const [fbkAcessToken, setFbkAcessToken] = React.useState<string>();
 
     React.useEffect(() => {
       if (isFocused) auth.logout()
@@ -32,7 +34,9 @@ export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
       if (auth.authenticate(email, password)){
         Toast.showSuccess('Connection réussie')
         setTimeout(()=>{
-          auth.getUserEmail().then(email => setId(email))
+          AsyncStorage.getItem("email")
+            .then(email => setId(email?email:""))
+          console.log(id)
           navigation && navigation.navigate('UserAdsPage', {id});
         },2000)
       }else{
@@ -49,6 +53,12 @@ export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
         });
       }
     };
+
+    const onFbkButtonPress= (): void => {
+      facebookService.makeLoginButton((accessToken :string) => {
+        setFbkAcessToken(accessToken)
+      })
+    }
   
     const onForgotPasswordButtonPress = (): void => {
       navigation && navigation.navigate('UserForgotPassword');
@@ -137,6 +147,7 @@ export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
                 status='control'
                 size='giant'
                 accessoryLeft={FacebookIcon}
+                onPress={onFbkButtonPress}
               />
               <Button
                 appearance='ghost'

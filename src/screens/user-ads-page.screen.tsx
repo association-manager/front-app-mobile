@@ -5,10 +5,8 @@ import adsApi from "../services/api-ads.service";
 import Toast from 'react-native-tiny-toast';
 import AdsItem, {Ads} from '../models/ads-item.model';
 import { useSafeArea } from 'react-native-safe-area-context';
+import { ADS_URL } from '../config/entrypoint';
 
-
-const ASSO_URL = " https://association-manager.go.yj.fr/"
-const ADS_URL = "https://association-manager.go.yj.fr/annonces/"
 
 export const UserAdsPageScreen = ({ navigation }: any): React.ReactElement => {
 

@@ -1,5 +1,6 @@
 import axios from "axios"
+import { ENTRYPOINT } from '../config/entrypoint';
 
 export default axios.create({
-    baseURL: "https://association-manager.go.yj.fr/api/"
+    baseURL: ENTRYPOINT
 });

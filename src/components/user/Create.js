@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Form from './Form';
 import { create, loading, error, reset } from '../../actions/user/create';
 import { Actions } from 'react-native-router-flux';
-import { delayRefresh } from '../../utils/helpers';
+import { delayRefresh } from '../../services/helpers';
 
 class Create extends Component {
 

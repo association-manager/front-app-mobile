@@ -8,7 +8,7 @@ import Spinner from '../Spinner';
 import { success } from '../../actions/user/create';
 import { retrieve, update, reset } from '../../actions/user/update';
 import { loading, error } from '../../actions/user/delete';
-import { delayRefresh } from '../../utils/helpers';
+import { delayRefresh } from '../../services/helpers';
 
 
 class Update extends Component {

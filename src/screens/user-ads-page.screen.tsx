@@ -64,15 +64,15 @@ export const UserAdsPageScreen = ({ navigation }: any): React.ReactElement => {
     return (
         <WebView
 /*             style={styles.WebViewStyle && {paddingTop:insets.top, paddingBottom:insets.bottom}}
-            originWhitelist={['*']}
+            originWhitelist={['*']}*/
             mediaPlaybackRequiresUserAction={false}
-            allowsInlineMediaPlayback={true} */
+            allowsInlineMediaPlayback={true}
             source={{ uri: `${iFrame}` }}
         >
         </WebView>
     )
-    
 }
+
 const styles = StyleSheet.create({
     container: {
       flexDirection: 'row',

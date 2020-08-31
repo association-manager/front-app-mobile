@@ -3,7 +3,7 @@ import {
   extractHubURL,
   normalize,
   mercureSubscribe as subscribe
-} from '../../utils/dataAccess';
+} from '../../services/dataAccess';
 
 export function error(error) {
   return { type: 'USER_SHOW_ERROR', error };
@@ -33,7 +33,7 @@ export function retrieve(id) {
         dispatch(loading(false));
         dispatch(success(retrieved));
 
-        if (hubURL) dispatch(mercureSubscribe(hubURL, retrieved['email']));
+        if (hubURL) dispatch(mercureSubscribe(hubURL, retrieved['@id']));
       })
       .catch(e => {
         dispatch(loading(false));

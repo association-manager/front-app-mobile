@@ -7,7 +7,7 @@ import { Actions } from 'react-native-router-flux';
 import Spinner from '../Spinner';
 import { list, reset } from '../../actions/user/list';
 import { success } from '../../actions/user/delete';
-import { pagination } from '../../utils/helpers';
+import { pagination } from '../../services/helpers';
 
 class ListComponent extends Component {
 

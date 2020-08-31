@@ -1,0 +1,54 @@
+.
+├── actions
+│   ├── association
+│   ├── associationprofile
+│   ├── member
+│   ├── membertaskworkgrouprelation
+│   ├── planning
+│   ├── project
+│   ├── projectplanning
+│   ├── staff
+│   ├── task
+│   └── user
+├── app
+├── assets
+│   ├── fonts
+│   ├── images
+│   └── styles
+│       └── login-system
+├── components
+│   ├── association
+│   ├── associationprofile
+│   ├── member
+│   ├── membertaskworkgrouprelation
+│   ├── planning
+│   ├── project
+│   ├── projectplanning
+│   ├── staff
+│   ├── task
+│   └── user
+├── config
+├── layouts
+│   ├── projects
+│   │   ├── assets
+│   │   └── extra
+│   └── settings
+│       └── extra
+├── models
+├── navigation
+├── reducers
+│   ├── association
+│   ├── associationprofile
+│   ├── member
+│   ├── membertaskworkgrouprelation
+│   ├── planning
+│   ├── project
+│   ├── projectplanning
+│   ├── staff
+│   ├── task
+│   └── user
+├── screens
+├── services
+└── utils
+
+51 directories

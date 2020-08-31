@@ -9,7 +9,7 @@ import { retrieve, reset } from '../../actions/user/show';
 import { del, loading, error } from '../../actions/user/delete';
 import { list } from '../../actions/user/list';
 import { Confirm } from '../Confirm';
-import { delayRefresh } from '../../utils/helpers';
+import { delayRefresh } from '../../services/helpers';
 
 class Show extends Component {
 

@@ -13,9 +13,11 @@ import auth from '../services/auth-api';
 import { useSafeArea } from 'react-native-safe-area-context'
 import AsyncStorage from '@react-native-community/async-storage';
 import {facebookService} from '../services/fbk-login.service';
+import { retrieve } from '../actions/user/show';
+import { connect } from 'react-redux';
 
 
-export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
+export const UserLoginScreen = ({ navigation}: any, props: any): React.ReactElement => {
 
     const insets = useSafeArea();
     const [email, setEmail] = React.useState<string>(USERNAME);
@@ -34,8 +36,8 @@ export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
       if (auth.authenticate(email, password)){
         Toast.showSuccess('Connection réussie')
         setTimeout(()=>{
-          AsyncStorage.getItem("email")
-            .then(email => setId(email?email:""))
+          AsyncStorage.getItem("id")
+            .then(id => setId(id?id:""))
           console.log(id)
           navigation && navigation.navigate('UserAdsPage', {id});
         },2000)
@@ -58,6 +60,25 @@ export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
       facebookService.makeLoginButton((accessToken :string) => {
         setFbkAcessToken(accessToken)
       })
+      if(fbkAcessToken) {
+        Toast.showSuccess('Connection réussie with Facebook' + fbkAcessToken)
+        setTimeout(()=>{
+          navigation && navigation.navigate('UserAdsPage');
+        },2000)
+      }
+      else{
+        Toast.show("Echec d'authentification !",{
+          position: Toast.position.CENTER,
+          containerStyle:{
+            backfaceVisibility: "hidden",
+            position: "relative",
+            alignContent: "center",
+            borderRadius: 20
+          },
+          textColor: '#FFF',
+          duration: 1500
+        });
+      }
     }
   
     const onForgotPasswordButtonPress = (): void => {
@@ -161,4 +182,20 @@ export const UserLoginScreen = ({ navigation}: any): React.ReactElement => {
       </KeyboardAvoidingView>
     );
 }
-  
+const mapStateToProps = (state: any) => {
+  return {
+    error: state.user.show.error,
+    loading: state.user.show.loading,
+    retrieved: state.user.show.retrieved,
+    deleteError: state.user.del.error,
+    deleteLoading: state.user.del.loading,
+    deleted: state.user.del.deleted,
+  };
+};
+
+const mapDispatchToProps = (dispatch: (arg0: any) => any) => {
+  return {
+    retrieve: (id: any) => dispatch(retrieve(id)),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(UserLoginScreen);

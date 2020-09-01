@@ -1,5 +1,4 @@
 import React from 'react';
-import { RouteProp } from '@react-navigation/core';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { BottomTabNavigationOptions, createBottomTabNavigator, }
@@ -10,7 +9,7 @@ import { ProjectsScreen } from '../screens/projects.screen';
 import { HomeDrawer } from '../components/home-drawer.component';
 import { HomeBottomNavigation } from '../components/home-bottom-navigation.component';
 import { MenuIcon } from '../components/icons';
-import { DrawerActions } from '@react-navigation/native';
+import { DrawerActions, StackActions, RouteProp } from '@react-navigation/native';
 import { UserProfileScreen } from '../screens/user-profile.screen';
 import { ProjectTasksAssoNavigator } from './project-tasks-asso.navigator';
 import { ProjectTasksProNavigator } from './project-tasks-pro.navigator';
@@ -19,6 +18,7 @@ import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { DashboardScreen } from '../screens/dashboard.screen';
 import { AssociationsListScreen } from '../screens/associations-grid.screen';
 import { AssociationProfileScreen } from '../screens/association-profile.screen';
+import {delayRefresh} from '../services/helpers';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();

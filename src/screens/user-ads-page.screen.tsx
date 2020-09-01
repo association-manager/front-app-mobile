@@ -8,7 +8,7 @@ import { useSafeArea } from 'react-native-safe-area-context';
 import { ADS_URL } from '../config/entrypoint';
 
 
-export const UserAdsPageScreen = ({ navigation }: any): React.ReactElement => {
+export const UserAdsPageScreen = ({ navigation }: any, props:string): React.ReactElement => {
 
     const insets = useSafeArea();
     const [iFrame, setIFrame]= React.useState<string>("")
@@ -53,7 +53,7 @@ export const UserAdsPageScreen = ({ navigation }: any): React.ReactElement => {
                     const iFrameProps = findIndexPicture !== -1? '' : ''                  
                     setIFrame(annonce);
                     setTimeout(() => {
-                        navigation && navigation.navigate('HomeNavigator');
+                        navigation && navigation.navigate('HomeNavigator', {props});
                     },adsTimer)
                 }
             },2000)
@@ -91,3 +91,4 @@ const styles = StyleSheet.create({
         marginTop: 40,
       },
   });
+  

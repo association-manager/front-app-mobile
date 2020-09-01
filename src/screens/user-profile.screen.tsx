@@ -5,11 +5,10 @@ import { ImageOverlay } from '../components/image-overlay.component';
 import { EmailIcon } from '../components/icons';
 import { KeyboardAvoidingView } from '../components/3rd-party';
 import userProfile from '../assets/styles/login-system/userProfile';
-import { SafeAreaView } from 'react-native-safe-area-context';
+/* import { SafeAreaView } from 'react-native-safe-area-context'; */
 import AsyncStorage from '@react-native-community/async-storage';
 import { connect } from 'react-redux';
 import { retrieve, update, reset } from '../actions/user/update';
-import {userUpdate} from '../components/user/Update';
 import Toast from 'react-native-tiny-toast';
 
 export const UserProfileScreen = ({ navigation }: any, props: any): React.ReactElement => {
@@ -22,6 +21,7 @@ export const UserProfileScreen = ({ navigation }: any, props: any): React.ReactE
   const [firstName, setFirstName] = React.useState<string>();
   const [lastName, setLastName] = React.useState<string>();
   const [email, setEmail] = React.useState<string>();
+  const [id, setId] = React.useState<string>(props.id);
   const [password, setPassword] = React.useState<string>();
   const [newPassword, setNewPassword] = React.useState<string>();
   const [confirmPassword, setConfirmNewPassword] = React.useState<string>();
@@ -39,12 +39,12 @@ export const UserProfileScreen = ({ navigation }: any, props: any): React.ReactE
   },[]);
 
   const onConfirmeditProfilPress = (): void => {
-    AsyncStorage.getItem('id').then(userId => 
-
-    )
+    AsyncStorage.getItem('id').then(userId => {
+      if(userId)setId(userId);
+    })
     Toast.showSuccess('Modification effectuée')
     setTimeout(()=>{
-      navigation && navigation.navigate('HomeNavigator')  ;
+      navigation && navigation.navigate('UserProfileScreen', {id});
     },2000)
     ;
   };
@@ -188,8 +188,8 @@ export const UserProfileScreen = ({ navigation }: any, props: any): React.ReactE
   const mapDispatchToProps = (dispatch: any) => {
     return {
       retrieve: (id: string )=> dispatch(retrieve(id)),
-      update: (item, values) => dispatch(update(item, values)),
+      update: (item: string , values: string) => dispatch(update(item, values)),
       reset: () => dispatch(reset()),
     };
   };
-  export default connect(mapStateToProps, mapDispatchToProps)(Update);
+  export default connect(mapStateToProps, mapDispatchToProps)(UserProfileScreen);

@@ -14,32 +14,32 @@ import {reducer as reducerForm} from 'redux-form';
 
 import { default as appTheme } from '../assets/styles/custom-theme.json'; // <-- Import app theme
 
-// see https://github.com/facebook/react-native/issues/14796
+/* // see https://github.com/facebook/react-native/issues/14796
 import { Buffer } from 'buffer';
 global.Buffer = Buffer;
 
 // see https://github.com/facebook/react-native/issues/16434
 import { URL, URLSearchParams } from 'whatwg-url';
 global.URL = URL;
-global.URLSearchParams = URLSearchParams;
+global.URLSearchParams = URLSearchParams;*/
 
 // see https://github.com/facebook/react-native/issues/12890
 import RNEventSource from 'react-native-event-source';
 global.EventSource = RNEventSource;
 
 const theme = { ...darkTheme, ...appTheme };
-const store = createStore(combineReducers({
+/* const store = createStore(combineReducers({
   ...AllReducers,
   reducerForm
-}), {}, applyMiddleware(thunk));
+}), {}, applyMiddleware(thunk)); */
 
 export default () => (
   <SafeAreaProvider>
       <IconRegistry icons={[EvaIconsPack, AppIconsPack]}/>
       <ApplicationProvider mapping={mapping} theme={theme}>
-        <Provider store={store}>
+        {/* <Provider store={store}> */}
           <AppNavigator/>
-        </Provider>
+       {/*  </Provider> */}
       </ApplicationProvider>
   </SafeAreaProvider>
 );

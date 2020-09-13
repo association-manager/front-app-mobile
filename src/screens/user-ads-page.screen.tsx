@@ -4,26 +4,17 @@ import {WebView} from 'react-native-webview';
 import adsApi from "../services/api-ads.service";
 import Toast from 'react-native-tiny-toast';
 import AdsItem, {Ads} from '../models/ads-item.model';
-import { useSafeArea } from 'react-native-safe-area-context';
-import { ADS_URL } from '../config/entrypoint';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { toastStyles } from 'src/assets/styles/toastStyles';
 
 
+
+const ADS_URL = 'https://association-manager.go.yj.fr/annonces/';
 export const UserAdsPageScreen = ({ navigation }: any, props:string): React.ReactElement => {
 
-    const insets = useSafeArea();
+    const insets = useSafeAreaInsets();
     const [iFrame, setIFrame]= React.useState<string>("")
     const [adsTimer, setAdsTimer]=React.useState<number>(10000)
-    const toastParam: Object = {
-        position: Toast.position.CENTER,
-        containerStyle:{
-          backfaceVisibility: "hidden",
-          position: "relative",
-          alignContent: "center",
-          borderRadius: 20
-        },
-        textColor: '#FFF',
-        duration: 1500
-      }
 
     React.useEffect(()=> {
         var annonce: string =""
@@ -37,7 +28,7 @@ export const UserAdsPageScreen = ({ navigation }: any, props:string): React.Reac
                 const findIndexVideo = ads.advertisementFiles.findIndex(isVideo)
                 if(findIndexPicture === -1 && findIndexVideo === -1) 
                     return (
-                        Toast.show("Annonce(s) indisponible(s)",toastParam),
+                        Toast.show("Annonce(s) indisponible(s)",toastStyles),
                         setTimeout(()=> {
                             Toast.hide
                             navigation && navigation.navigate('HomeNavigator')

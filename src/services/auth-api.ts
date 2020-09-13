@@ -12,18 +12,15 @@ const authenticate = (username: string|undefined, password: string|undefined ): 
         return api
             .post("login_check", {username, password})
             .then(response => response.data.token)
-            .then(data => {
+            .then(token => {
              // Je stocké le token dans mon localStorage
-                const {data: dataUser} = data.data;
-                const {username: email}= JwtDecode(data.token)
+                //const {data: dataUser} = data.data;
+                const {username: email}= JwtDecode(token)
                 AsyncStorage.multiSet([
-                    ["authToken", data.token],
-                    ["email" , email],
-                    ["id", dataUser.id],
-                    ["firstName", dataUser.firstName],
-                    ["lastName", dataUser.lastName]]);
+                    ["authToken", token],
+                    ["email" , email]])
                 // On prévient Axios qu'on a maintenant un header par défaut sur toutes nos futures requetes HTTP
-                setAxiosToken(data.token);
+                setAxiosToken(token);
                 return true
             }).catch(()=> false);
     }else{

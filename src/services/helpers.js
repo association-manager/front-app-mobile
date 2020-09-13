@@ -1,6 +1,6 @@
 import React from 'react';
-import {View} from 'react-native';
-import {SocialIcon} from 'react-native-elements';
+import { View } from 'react-native';
+import { SocialIcon } from 'react-native-elements';
 import { Actions } from 'react-native-router-flux';
 
 export function paginationRoute(item) {

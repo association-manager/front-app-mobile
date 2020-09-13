@@ -7,12 +7,17 @@ import { KeyboardAvoidingView } from '../components/3rd-party';
 import userForgotPassword from '../assets/styles/login-system/userForgotPassword';
 import forgetPwdApi from '../services/api-forget-pwd.service';
 import Toast from 'react-native-tiny-toast';
+import { validate } from 'validate.js';
+import {constraints} from '../services/constraints';
+import { toastStyles } from 'src/assets/styles/toastStyles';
 
 export const UserForgotPasswordScreen = ({ navigation }: any): React.ReactElement => {
 
   const [email, setEmail] = React.useState<string>();
 
+
   const onResetPasswordButtonPress = async (): Promise<void> => {
+    if(validate(email, constraints.email)=== undefined){
     email
     let query = `mutation
                         {
@@ -34,6 +39,9 @@ export const UserForgotPasswordScreen = ({ navigation }: any): React.ReactElemen
       setTimeout(()=>navigation && navigation.goBack(), 5000)
       
     })
+  }else{
+    Toast.show(constraints.email.message, toastStyles)
+  }
   };
 
   return (

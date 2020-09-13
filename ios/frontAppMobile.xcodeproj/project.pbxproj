@@ -12,12 +12,14 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1CAD7872250CE60B00F8D09A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAD7871250CE60B00F8D09A /* FBSDKCoreKit.framework */; };
+		1CAD7874250CE61700F8D09A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAD7873250CE61600F8D09A /* FBSDKLoginKit.framework */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* frontAppMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* frontAppMobileTests.m */; };
+		31EC346A606202B651267F6C /* libPods-frontAppMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 339BC98F0ED4F89388867108 /* libPods-frontAppMobileTests.a */; };
 		6BA79D61E3EA8A51D465A690 /* libPods-frontAppMobile-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1826F0ABDB75AF27882B5AE1 /* libPods-frontAppMobile-tvOSTests.a */; };
-		86117C66C97B5A7DFF39F170 /* libPods-frontAppMobile-frontAppMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC921BC433BBECB698A7B0D3 /* libPods-frontAppMobile-frontAppMobileTests.a */; };
 		88637F887B85A75E5DDAAE0B /* libPods-frontAppMobile-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4962A0B4DFAB58500EAFC3 /* libPods-frontAppMobile-tvOS.a */; };
 		8D1F389698610C6BCC548A0D /* libPods-frontAppMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB2B084EB1F96B83A290160 /* libPods-frontAppMobile.a */; };
 /* End PBXBuildFile section */
@@ -51,18 +53,22 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = frontAppMobile/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = frontAppMobile/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = frontAppMobile/main.m; sourceTree = "<group>"; };
+		181286D83D0CCF47B4B62F53 /* Pods-frontAppMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontAppMobileTests.release.xcconfig"; path = "Target Support Files/Pods-frontAppMobileTests/Pods-frontAppMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		1826F0ABDB75AF27882B5AE1 /* libPods-frontAppMobile-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-frontAppMobile-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CAD7871250CE60B00F8D09A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Downloads/Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		1CAD7873250CE61600F8D09A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Downloads/Carthage/Build/iOS/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		2A4FAB8851504DFBB4A24399 /* Pods-frontAppMobile-frontAppMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontAppMobile-frontAppMobileTests.release.xcconfig"; path = "Target Support Files/Pods-frontAppMobile-frontAppMobileTests/Pods-frontAppMobile-frontAppMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* frontAppMobile-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "frontAppMobile-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* frontAppMobile-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "frontAppMobile-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		339BC98F0ED4F89388867108 /* libPods-frontAppMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-frontAppMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4039F4F66C609A7B584DEAD0 /* Pods-frontAppMobile-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontAppMobile-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-frontAppMobile-tvOSTests/Pods-frontAppMobile-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DB2B084EB1F96B83A290160 /* libPods-frontAppMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-frontAppMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60505AB09321196DCB48533A /* Pods-frontAppMobile-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontAppMobile-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-frontAppMobile-tvOS/Pods-frontAppMobile-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6E4962A0B4DFAB58500EAFC3 /* libPods-frontAppMobile-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-frontAppMobile-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BC03985274067C80D653D1 /* Pods-frontAppMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontAppMobile.release.xcconfig"; path = "Target Support Files/Pods-frontAppMobile/Pods-frontAppMobile.release.xcconfig"; sourceTree = "<group>"; };
 		AC7521E75597CE21D66A39A6 /* Pods-frontAppMobile-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontAppMobile-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-frontAppMobile-tvOSTests/Pods-frontAppMobile-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		AC921BC433BBECB698A7B0D3 /* libPods-frontAppMobile-frontAppMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-frontAppMobile-frontAppMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1876B9309A5B87D8531B4A5 /* Pods-frontAppMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontAppMobile.debug.xcconfig"; path = "Target Support Files/Pods-frontAppMobile/Pods-frontAppMobile.debug.xcconfig"; sourceTree = "<group>"; };
+		C3E396549A60248C8B808DD2 /* Pods-frontAppMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontAppMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-frontAppMobileTests/Pods-frontAppMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4253F9B88423170E60FDD38 /* Pods-frontAppMobile-frontAppMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontAppMobile-frontAppMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-frontAppMobile-frontAppMobileTests/Pods-frontAppMobile-frontAppMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -74,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86117C66C97B5A7DFF39F170 /* libPods-frontAppMobile-frontAppMobileTests.a in Frameworks */,
+				31EC346A606202B651267F6C /* libPods-frontAppMobileTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +89,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D1F389698610C6BCC548A0D /* libPods-frontAppMobile.a in Frameworks */,
+				1CAD7872250CE60B00F8D09A /* FBSDKCoreKit.framework in Frameworks */,
+				1CAD7874250CE61700F8D09A /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,12 +147,14 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1CAD7873250CE61600F8D09A /* FBSDKLoginKit.framework */,
+				1CAD7871250CE60B00F8D09A /* FBSDKCoreKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				4DB2B084EB1F96B83A290160 /* libPods-frontAppMobile.a */,
-				AC921BC433BBECB698A7B0D3 /* libPods-frontAppMobile-frontAppMobileTests.a */,
 				6E4962A0B4DFAB58500EAFC3 /* libPods-frontAppMobile-tvOS.a */,
 				1826F0ABDB75AF27882B5AE1 /* libPods-frontAppMobile-tvOSTests.a */,
+				339BC98F0ED4F89388867108 /* libPods-frontAppMobileTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,8 +170,9 @@
 				FB1CFFBB03B855F72C7FD22E /* Pods-frontAppMobile-tvOS.release.xcconfig */,
 				4039F4F66C609A7B584DEAD0 /* Pods-frontAppMobile-tvOSTests.debug.xcconfig */,
 				AC7521E75597CE21D66A39A6 /* Pods-frontAppMobile-tvOSTests.release.xcconfig */,
+				C3E396549A60248C8B808DD2 /* Pods-frontAppMobileTests.debug.xcconfig */,
+				181286D83D0CCF47B4B62F53 /* Pods-frontAppMobileTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -170,7 +181,8 @@
 			children = (
 			);
 			name = Libraries;
-			sourceTree = "<group>";
+			path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/../../../../../../../../../Users/Gio1378/FinalProject2020/frontAppMobile/ios;
+			sourceTree = "<absolute>";
 		};
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
@@ -209,6 +221,7 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				E1CA48CF7176B5B482B1071A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +243,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				C8B0DB8D505388E91B566A72 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +264,7 @@
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
 				2D02E4791E0B4A5D006451C7 /* Resources */,
 				2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */,
+				C55796C01B8D3DDC0A1DE107 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,6 +307,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = HUQ75Y8GW8;
 						LastSwiftMigration = 1120;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -404,7 +420,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-frontAppMobile-frontAppMobileTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-frontAppMobileTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -431,6 +447,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C55796C01B8D3DDC0A1DE107 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-frontAppMobile-tvOS/Pods-frontAppMobile-tvOS-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-frontAppMobile-tvOS/Pods-frontAppMobile-tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8B0DB8D505388E91B566A72 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-frontAppMobile/Pods-frontAppMobile-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-frontAppMobile/Pods-frontAppMobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1CA48CF7176B5B482B1071A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-frontAppMobileTests/Pods-frontAppMobileTests-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-frontAppMobileTests/Pods-frontAppMobileTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E46B498898145DADBD9E7330 /* [CP] Check Pods Manifest.lock */ = {
@@ -582,7 +652,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4253F9B88423170E60FDD38 /* Pods-frontAppMobile-frontAppMobileTests.debug.xcconfig */;
+			baseConfigurationReference = C3E396549A60248C8B808DD2 /* Pods-frontAppMobileTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -605,7 +675,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A4FAB8851504DFBB4A24399 /* Pods-frontAppMobile-frontAppMobileTests.release.xcconfig */;
+			baseConfigurationReference = 181286D83D0CCF47B4B62F53 /* Pods-frontAppMobileTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -630,6 +700,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HUQ75Y8GW8;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -657,6 +728,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HUQ75Y8GW8;
 				INFOPLIST_FILE = frontAppMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

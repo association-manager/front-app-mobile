@@ -1,4 +1,3 @@
-import { ENTRYPOINT } from '../config/entrypoint';
 import { SubmissionError } from 'redux-form';
 import get from 'lodash/get';
 import has from 'lodash/has';
@@ -6,6 +5,7 @@ import mapValues from 'lodash/mapValues';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const MIME_TYPE = 'application/ld+json';
+const ENTRYPOINT = 'https://association-manager.go.yj.fr/api';
 const fetchHeaders = { Authorization: `Bearer ${AsyncStorage.getItem("token")}` };
 
 export function fetch(id, options = {}) {

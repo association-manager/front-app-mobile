@@ -4,7 +4,6 @@
  *
  * @format
  */
-
 const MetroConfig = require('@ui-kitten/metro-config');
 
 /**

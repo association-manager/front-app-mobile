@@ -8,6 +8,7 @@ import {delayRefresh} from '../services/helpers';
 
 const Stack = createStackNavigator();
 
+
 export const AuthNavigator = (): React.ReactElement => (
   <Stack.Navigator headerMode='none'>
     <Stack.Screen name='UserLoginPage' component={UserLoginScreen}/>

@@ -1,5 +1,7 @@
 import axios from "axios"
-import { FP_ENTRYPOINT } from "../config/entrypoint";
+
+
+const FP_ENTRYPOINT = 'https://back-end-node-store.herokuapp.com/';
 
 export default axios.create({
     baseURL: FP_ENTRYPOINT

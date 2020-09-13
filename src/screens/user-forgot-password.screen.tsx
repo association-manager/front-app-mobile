@@ -9,7 +9,7 @@ import forgetPwdApi from '../services/api-forget-pwd.service';
 import Toast from 'react-native-tiny-toast';
 import { validate } from 'validate.js';
 import {constraints} from '../services/constraints';
-import { toastStyles } from 'src/assets/styles/toastStyles';
+import { toastStyles } from '../assets/styles/toastStyles';
 
 export const UserForgotPasswordScreen = ({ navigation }: any): React.ReactElement => {
 

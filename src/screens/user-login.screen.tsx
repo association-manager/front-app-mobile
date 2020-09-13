@@ -14,7 +14,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { retrieve } from '../actions/user/show';
 import { connect } from 'react-redux';
 import * as Facebook from 'expo-facebook';
-import { toastStyles } from 'src/assets/styles/toastStyles';
+import { toastStyles } from '../assets/styles/toastStyles';
 
 
 

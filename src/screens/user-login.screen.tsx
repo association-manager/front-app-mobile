@@ -6,7 +6,7 @@ import {
   FacebookIcon,GoogleIcon, PersonIcon, TwitterIcon,
   } from '../components/icons';
 import { KeyboardAvoidingView } from '../components/3rd-party';
-import Toast, { ToastOptions } from 'react-native-tiny-toast'
+import Toast from 'react-native-tiny-toast'
 import styles from '../assets/styles/login-system/userLoginPage';
 import auth from '../services/auth-api';
 import { useSafeAreaInsets } from 'react-native-safe-area-context'

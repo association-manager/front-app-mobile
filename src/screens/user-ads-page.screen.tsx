@@ -5,7 +5,7 @@ import adsApi from "../services/api-ads.service";
 import Toast from 'react-native-tiny-toast';
 import AdsItem, {Ads} from '../models/ads-item.model';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { toastStyles } from 'src/assets/styles/toastStyles';
+import { toastStyles } from '../assets/styles/toastStyles';
 
 
 

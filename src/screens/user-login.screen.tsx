@@ -2,20 +2,15 @@ import React, {useState} from 'react';
 import {  View, TouchableWithoutFeedback } from 'react-native';
 import { Button, Input, Text, Avatar, IconProps, Icon} from '@ui-kitten/components';
 import { ImageOverlay } from '../components/image-overlay.component';
-import { 
-  FacebookIcon,GoogleIcon, PersonIcon, TwitterIcon,
+import { FacebookIcon,GoogleIcon, PersonIcon, TwitterIcon,
   } from '../components/icons';
 import { KeyboardAvoidingView } from '../components/3rd-party';
-import Toast from 'react-native-tiny-toast'
 import styles from '../assets/styles/login-system/userLoginPage';
-import auth from '../services/auth-api';
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import AsyncStorage from '@react-native-community/async-storage';
 import { retrieve } from '../actions/user/show';
 import { connect } from 'react-redux';
-import * as Facebook from 'expo-facebook';
-import { toastStyles } from '../assets/styles/toastStyles';
 
+import { AuthContext } from '../navigation/auth.navigation';
 
 
 export const UserLoginScreen = ({ navigation}: any, props: any): React.ReactElement => {
@@ -25,73 +20,19 @@ export const UserLoginScreen = ({ navigation}: any, props: any): React.ReactElem
     const [password, setPassword] = useState<string>();
     const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
     const isFocused = navigation.isFocused();
-    const [id, setId] = useState<string>();
-    const [isLoggedin, setLoggedinStatus] = useState(false);
-    const [userData, setUserData] = useState(null);
-    const [isImageLoading, setImageLoadStatus] = useState(false);
-    //const [fbkAcessToken, setFbkAcessToken] = React.useState<string>();
-    
 
-    React.useEffect(() => {
-      if (isFocused) {
-        console.log(navigation.dangerouslyGetState())
-        auth.logout();
-        fbkLogout();
-      }
-    }, [isFocused===true])
-   
+    //const [fbkAcessToken, setFbkAcessToken] = React.useState<string>();
+    const { signIn, signInFbk } = React.useContext(AuthContext);
+
 
     const onSignInButtonPress = async (): Promise<void> => {
-      if (await auth.authenticate(email, password)){
-        Toast.showSuccess('Connection réussie')
-        setTimeout(()=>{
-          AsyncStorage.getItem("email")
-            .then(id => setId(id?id:""))
-          console.log(id)
-          navigation && navigation.navigate('UserAdsPage', {id});
-        },2000)
-      }else{
-        Toast.show("Echec d'authentification !",toastStyles);
-      }
+      signIn(email, password);
+      
     };
 
     const facebookLogIn = async (): Promise<void> =>{
-      await Facebook.initializeAsync('1952300694903762', 'AssociationsManager');
-      try {
-        const {
-          type,
-          token,
-          expires,
-          permissions,
-          declinedPermissions,
-        } = await Facebook.logInWithReadPermissionsAsync({
-          permissions: ['public_profile'],
-        });
-        if (type === 'success') {
-          // Get the user's name using Facebook's Graph API
-          fetch(`https://graph.facebook.com/me?access_token=${token}&fields=id,name,email,picture.height(500)`)
-            .then(response => response.json())
-            .then(data => {
-              Toast.showSuccess("Connection réussie :" + data)
-              if(data)AsyncStorage.setItem('userData', data.toString())
-              setLoggedinStatus(true);
-              setUserData(data);
-            })
-            .catch(e => console.log(e))
-        } else {
-          // type === 'cancel'
-        }
-      } catch ({ message }) {
-        Toast.show(`Facebook Login Error: ${message}`,toastStyles);
-      }
+      signInFbk()
     }
-  
-    const fbkLogout = (): void => {
-      setLoggedinStatus(false);
-      setUserData(null);
-      setImageLoadStatus(false);
-    }
-
   
     const onForgotPasswordButtonPress = (): void => {
       navigation && navigation.navigate('UserForgotPassword');

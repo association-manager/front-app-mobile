@@ -17,7 +17,7 @@ const authenticate = (username: string|undefined, password: string|undefined ): 
                 //const {data: dataUser} = data.data;
                 const {username: email}= JwtDecode(token)
                 AsyncStorage.multiSet([
-                    ["authToken", token],
+                    ["token", token],
                     ["email" , email]])
                 // On prévient Axios qu'on a maintenant un header par défaut sur toutes nos futures requetes HTTP
                 setAxiosToken(token);
@@ -41,7 +41,7 @@ const setAxiosToken = (token: string): void => {
  */
 const setup = (): void  => {
     // 1. Voir si on a un token ?
-    AsyncStorage.getItem("authToken")
+    AsyncStorage.getItem("token")
         .then(token => {
             // 2. Si le token est encore valide
             if(token && isAuthenticated()) setAxiosToken(token)       
@@ -51,7 +51,7 @@ const setup = (): void  => {
 const isAuthenticated = (): boolean =>{
     let result = false
     // 1. Voir si on a un token ?
-    AsyncStorage.getItem("authToken")
+    AsyncStorage.getItem("token")
         .then(token => {
             // 2. Si le token est encore valide
             if (token) {
@@ -64,7 +64,7 @@ const isAuthenticated = (): boolean =>{
 }
 
 const logout = (): void => {
-    AsyncStorage.removeItem("authToken");
+    AsyncStorage.removeItem("token");
     delete api.defaults.headers["Authorization"];
 }
 

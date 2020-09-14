@@ -29,15 +29,6 @@ export const CommentList = (props: CommentListProps): React.ReactElement => {
       style={styles.commentItem}
       header={() => renderCommentHeader(info.item)}>
       <Text>{info.item.text}</Text>
-      <View style={styles.commentReactionsContainer}>
-        <Button
-          style={styles.iconButton}
-          appearance='ghost'
-          status='basic'
-          accessoryLeft={MessageCircleIcon}>
-          {`${info.item.comments.length}`}
-        </Button>
-      </View>
     </Card>
   );
 

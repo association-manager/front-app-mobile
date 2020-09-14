@@ -17,30 +17,30 @@ export const UserForgotPasswordScreen = ({ navigation }: any): React.ReactElemen
 
 
   const onResetPasswordButtonPress = async (): Promise<void> => {
-    if(validate(email, constraints.email)=== undefined){
-    email
-    let query = `mutation
-                        {
-                          forgotPassword(
-                            email: "${email}",
-                          
-                          )
-                        }
-                  `;
-    await forgetPwdApi.post('/graphql', {query},{
-      headers: {
-        'Shopping-Cart': 'associationManager'
-      }}
-    ).then((result: any) => {
-      Toast.showSuccess(
-         'Message Envoyer\nSi votre email est valide vous receverez un email de réinitialisation',
-         {duration: 4000}
-        )
-      setTimeout(()=>navigation && navigation.goBack(), 5000)
-      
-    })
+    if(validate({from:email}, constraints)=== undefined){
+      email
+      let query = `mutation
+                          {
+                            forgotPassword(
+                              email: "${email}",
+                            
+                            )
+                          }
+                    `;
+      await forgetPwdApi.post('/graphql', {query},{
+        headers: {
+          'Shopping-Cart': 'associationManager'
+        }}
+      ).then((result: any) => {
+        Toast.showSuccess(
+          'Message Envoyer\nSi votre email est valide vous receverez un email de réinitialisation',
+          {duration: 4000}
+          )
+        setTimeout(()=>navigation && navigation.goBack(), 5000)
+        
+      })
   }else{
-    Toast.show(constraints.email.message, toastStyles)
+    Toast.show("Veuillez renseigner une adresse e-mail valide", toastStyles)
   }
   };
 

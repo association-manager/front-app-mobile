@@ -10,7 +10,7 @@ export interface ProjectTaskItem {
   startDate: string;
   endDate: string;
   image?: ImageSourcePropType;
-  progress : ProjectTaskListItem;
+  progress : ProjectTaskListItem[];
   createdAt: string;
   author: Profile;
   comments: Comment[];

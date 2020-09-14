@@ -28,7 +28,7 @@ export class ProjectTaskDetail {
       moment().utcOffset('+02:00').format('YYYY-MM-DD hh:mm:ss'),
       moment().utcOffset('+02:00').format('YYYY-MM-DD hh:mm:ss'),
       [
-        ProjectTaskListItem.TO_DO(),
+        ProjectTaskListItem.TO_DO(true),
         ProjectTaskListItem.IN_PROGRESS(),
         ProjectTaskListItem.COMPLETED(),
       ],

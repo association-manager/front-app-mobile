@@ -1,18 +1,19 @@
 export class ProjectTaskListItem {
 
-  constructor(readonly color: string,
-              readonly description: string) {
+  constructor( readonly color: string,
+               readonly description: string,
+               public checked: boolean) {
   }
 
-  static TO_DO(): ProjectTaskListItem {
-    return new ProjectTaskListItem('#FF708D', 'À faire');
+  static TO_DO(checked?: boolean): ProjectTaskListItem {
+    return new ProjectTaskListItem('#FF708D', 'À faire', checked?checked:false);
   }
 
-  static IN_PROGRESS(): ProjectTaskListItem {
-    return new ProjectTaskListItem('#FFC94D', 'En cours');
+  static IN_PROGRESS(checked?: boolean): ProjectTaskListItem {
+    return new ProjectTaskListItem('#FFC94D', 'En cours', checked?checked:false);
   }
 
-  static COMPLETED(): ProjectTaskListItem {
-    return new ProjectTaskListItem('#3366FF', 'Terminée');
+  static COMPLETED(checked?: boolean): ProjectTaskListItem {
+    return new ProjectTaskListItem('#3366FF', 'Terminée', checked?checked:false);
   }
 }

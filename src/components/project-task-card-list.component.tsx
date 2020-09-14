@@ -7,6 +7,8 @@ import { ImageOverlay } from '../components/image-overlay.component';
 import { ClockIcon } from './icons';
 
 import {styles} from '../assets/styles/projectTaskCardStyle';
+import { data } from 'src/services/ProjectTaskData';
+import { ProjectTaskListItem } from 'src/models/project-task-list-item.models';
 
 
 export interface ProjectTaskCardListProps extends Omit<ListProps, 'renderItem'> {
@@ -24,13 +26,16 @@ export const ProjectTaskCardList = (props: ProjectTaskCardListProps): ListElemen
 
   const { contentContainerStyle, onItemPress, ...listProps} = props;
 
+  const renderProgressItem = (progress: ProjectTaskListItem, index:number): React.ReactElement => {
+   return <Text key={index} style={[styles.level, { color:progress.color }]} category='s1' status='control'>
+    {progress.description}
+    </Text>
+  };
   const renderItem = (info: ListRenderItemInfo<ProjectTaskItem>): CardElement => (
     
     <Card {...listProps} style={styles.container} onPress={() => onItemPress(info.index)}>
       <ImageOverlay style={styles.image} source={info.item.image}>
-        <Text style={[styles.level, { color: info.item.progress.color }]} category='s1' status='control'>
-          {info.item.progress.description}
-        </Text>
+        { renderProgressItem(info.item.progress[0], 0)}
         <Text style={styles.title} category='h4' status='control'>
           {info.item.title}
         </Text>

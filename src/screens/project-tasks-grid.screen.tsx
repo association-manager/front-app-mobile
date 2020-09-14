@@ -23,7 +23,8 @@ export const ProjectTasksGridScreen = ( {navigation, route}: any ): React.ReactE
   }, [navigation, route]);
 
   const onItemPress = (index: number): void => {
-    navigation.navigate(data[index].route);
+    const projectTask = data[index]
+    navigation.navigate(data[index].route, {projectTask});
   };
 
   const displayProjectTaskData: ProjectTaskData[] = data.filter(data => data.progress.description === route.name);

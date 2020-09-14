@@ -1,10 +1,10 @@
 import React from 'react';
 import { ImageBackground, Platform, View } from 'react-native';
-import { Input, Layout, Text, useStyleSheet, RadioGroup, Radio } from '@ui-kitten/components';
+import { Input, Layout, Text, useStyleSheet, RadioGroup, Radio, Button } from '@ui-kitten/components';
 import { KeyboardAvoidingView } from './keyboard-avoiding-view.component';
 import { CommentList } from './comment-list.component';
 import { ProjectTaskDetail } from '../services/projectTaskDetailData';
-import { ProjectTaskListItem} from '../models/project-task-list-item.models';
+import { ProjectTaskListItem } from '../models/project-task-list-item.models';
 
 import { themedStyles } from '../assets/styles/project-task-detail-styles';
 
@@ -16,21 +16,24 @@ const keyboardOffset = (height: number): number => Platform.select({
 });
 
 export default (props: any): React.ReactElement => {
-
+  const data: ProjectTaskDetail = props.projectTask
   const styles = useStyleSheet(themedStyles);
   const [inputComment, setInputComment] = React.useState<string>();
   const [selectedProgressIndex, setSelectedProgressIndex] = React.useState<number>();
-  
- /*  React.useEffect(()=>{
-    props.retrieve(props.id);
-  })
-  const data : ProjectTaskDetail = props.retrieved; */
+
+  /*  React.useEffect(()=>{
+     props.retrieve(props.id);
+   })
+   const data : ProjectTaskDetail = props.retrieved; */
 
   const renderProgressItem = (progress: ProjectTaskListItem, index: number): React.ReactElement => (
-    <Radio key={index}>
-       {()=><Text style={{color: progress.color }}>{progress.description.toUpperCase()}</Text>}
+    <Radio key={index} checked={progress.checked}>
+      {() => <Text style={{ color: progress.color }}>{progress.description.toUpperCase()}</Text>}
     </Radio>
   );
+  const onCommentButtonPress = (): void => {
+
+  }
 
   const renderHeader = (): React.ReactElement => (
     <Layout
@@ -60,8 +63,8 @@ export default (props: any): React.ReactElement => {
         {data.content}
       </Text>
       <Text
-          style={styles.sectionLabel}
-          category='h6'>
+        style={styles.sectionLabel}
+        category='h6'>
         Progress:
       </Text>
       <RadioGroup
@@ -75,11 +78,16 @@ export default (props: any): React.ReactElement => {
       </View>
       <Input
         style={styles.commentInput}
-        label={()=> <Text style={[styles.commentInputLabel]}>Comments</Text>}
+        label={() => <Text style={[styles.commentInputLabel]}>Comments</Text>}
         placeholder='Write your comment'
         value={inputComment}
         onChangeText={setInputComment}
       />
+      <Button
+        size='tiny'
+        onPress={onCommentButtonPress}>
+        valider
+      </Button>
     </Layout>
   );
 

@@ -10,6 +10,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { connect } from 'react-redux';
 import { retrieve, update, reset } from '../actions/user/update';
 import Toast from 'react-native-tiny-toast';
+import api from "../services/api.service";
+import { toastStyles } from '../assets/styles/toastStyles';
 
 export const UserProfileScreen = ({ navigation }: any, props: any): React.ReactElement => {
 
@@ -21,7 +23,7 @@ export const UserProfileScreen = ({ navigation }: any, props: any): React.ReactE
   const [firstName, setFirstName] = React.useState<string>();
   const [lastName, setLastName] = React.useState<string>();
   const [email, setEmail] = React.useState<string>();
-  const [id, setId] = React.useState<string>(props.id);
+  const [id, setId] = React.useState<string>();
   const [password, setPassword] = React.useState<string>();
   const [newPassword, setNewPassword] = React.useState<string>();
   const [confirmPassword, setConfirmNewPassword] = React.useState<string>();
@@ -30,23 +32,25 @@ export const UserProfileScreen = ({ navigation }: any, props: any): React.ReactE
 
 
   React.useEffect(()=>{
-    AsyncStorage.multiGet(['firstName', 'lastName', 'email'])
-      .then((user:any) => {
-        setFirstName(user[0]['firstName']);
-        setLastName(user[1]['lastName']);
-        setEmail(user[2]['email'])
-      })
-  },[]);
+    AsyncStorage.getItem("email").then(id => setId(id?id:""))
+  },[id]);
 
   const onConfirmeditProfilPress = (): void => {
-    AsyncStorage.getItem('id').then(userId => {
-      if(userId)setId(userId);
-    })
-    Toast.showSuccess('Modification effectuée')
-    setTimeout(()=>{
-      navigation && navigation.navigate('UserProfileScreen', {id});
-    },2000)
-    ;
+      if (newPassword===confirmPassword)
+      api.put("utilisateurs/modifier", {
+        "firstName": firstName,
+	      "lastName": lastName,
+	      "email": email,
+        "plainPassword": newPassword,
+        "dataUsageAgreement": 1
+      }).then(response => {
+        console.log(response)
+        Toast.showSuccess('Modification effectuée')
+        setTimeout(()=>{
+          navigation && navigation.navigate('UserProfileScreen', {id});
+        },2000)
+      }).catch(e=>Toast.show(e, toastStyles))
+      else Toast.show('La Confirmation du mot de passe est différente', toastStyles)
   };
 
   const onPasswordIconPress = (): void => {

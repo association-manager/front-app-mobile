@@ -1,4 +1,4 @@
-import { ToastOptions } from 'react-native-tiny-toast'
+import Toast, { ToastOptions } from 'react-native-tiny-toast'
 
 export const toastStyles: ToastOptions = {
     position: Toast.position.CENTER,

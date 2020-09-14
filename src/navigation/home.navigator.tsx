@@ -19,11 +19,11 @@ import { DashboardScreen } from '../screens/dashboard.screen';
 import { AssociationsListScreen } from '../screens/associations-grid.screen';
 import { AssociationProfileScreen } from '../screens/association-profile.screen';
 import {delayRefresh} from '../services/helpers';
+import { AuthContext } from './auth.navigation';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
-
 /*
  * Can we access it from `HomeNavigator`?
  */
@@ -74,6 +74,8 @@ const TopNavActionButton = (navigation: any) => (
   />
 );
 
+
+
 const HomeDrawerNavigator = () => (
   <Drawer.Navigator
     screenOptions={{ swipeEnabled: false }}
@@ -83,7 +85,6 @@ const HomeDrawerNavigator = () => (
     <Drawer.Screen name='Liste des associations' component={AssociationsListScreen} />
     <Drawer.Screen name='Tableau de bord' component={DashboardScreen} />
     <Drawer.Screen name='Mon profil' component={UserProfileScreen} />
-    <Drawer.Screen name='UserLoginPage' component={UserLoginScreen} />
     <Drawer.Screen name='Tâches projet' component={ProjectTasksNavigator}/>
     <Drawer.Screen name="Profile de l'association" component={AssociationProfileScreen}/>
   </Drawer.Navigator>

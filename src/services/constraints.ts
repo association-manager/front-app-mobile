@@ -1,7 +1,8 @@
-export const constraints = {
-      email: {
-        message: "^Veuillez renseigner une adresse e-mail valide"
-      }
+
+export const constraints: any = {
+  from: {
+      email: true
+  }
   };
   
-  export default constraints;
+export default constraints;

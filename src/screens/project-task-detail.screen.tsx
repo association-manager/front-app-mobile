@@ -6,7 +6,7 @@ import ContentView from '../components/project-task-detail.component';
 import { useFocusEffect } from '@react-navigation/native';
 
 
-export const ProjectTaskDetailScreen = ({ navigation }: any): React.ReactElement => {
+export const ProjectTaskDetailScreen = ({ navigation, props }: any): React.ReactElement => {
 
   useFocusEffect(React.useCallback(()=> navigation.setOptions({title:'tache'}),[navigation]));
 
@@ -25,7 +25,7 @@ export const ProjectTaskDetailScreen = ({ navigation }: any): React.ReactElement
         title='Retour'
         accessoryLeft={renderBackAction}
       />
-      <ContentView/>
+      <ContentView data={props.data}/>
     </>
   );
 };
